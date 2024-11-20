@@ -13,6 +13,7 @@
 		5734BECD2CECFA61002A5D5B /* RestaurantMenuViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BECC2CECFA61002A5D5B /* RestaurantMenuViewModel.swift */; };
 		5734BECF2CECFA8F002A5D5B /* RestaurantMenuView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BECE2CECFA8F002A5D5B /* RestaurantMenuView.swift */; };
 		5734BED12CECFD13002A5D5B /* String.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BED02CECFD13002A5D5B /* String.swift */; };
+		5734BED32CEDA2E1002A5D5B /* CommonViews.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BED22CEDA2E1002A5D5B /* CommonViews.swift */; };
 		573EDE372C64C27900CBCB9F /* TheCaffeteriaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE362C64C27900CBCB9F /* TheCaffeteriaApp.swift */; };
 		573EDE392C64C27900CBCB9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE382C64C27900CBCB9F /* ContentView.swift */; };
 		573EDE3B2C64C27900CBCB9F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE3A2C64C27900CBCB9F /* Item.swift */; };
@@ -47,6 +48,7 @@
 		5734BECC2CECFA61002A5D5B /* RestaurantMenuViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuViewModel.swift; sourceTree = "<group>"; };
 		5734BECE2CECFA8F002A5D5B /* RestaurantMenuView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RestaurantMenuView.swift; sourceTree = "<group>"; };
 		5734BED02CECFD13002A5D5B /* String.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = String.swift; sourceTree = "<group>"; };
+		5734BED22CEDA2E1002A5D5B /* CommonViews.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CommonViews.swift; sourceTree = "<group>"; };
 		573EDE332C64C27900CBCB9F /* TheCaffeteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCaffeteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573EDE362C64C27900CBCB9F /* TheCaffeteriaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCaffeteriaApp.swift; sourceTree = "<group>"; };
 		573EDE382C64C27900CBCB9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -140,6 +142,7 @@
 			children = (
 				5734BEC82CECF840002A5D5B /* Utility.swift */,
 				5734BED02CECFD13002A5D5B /* String.swift */,
+				5734BED22CEDA2E1002A5D5B /* CommonViews.swift */,
 			);
 			path = Support;
 			sourceTree = "<group>";
@@ -342,6 +345,7 @@
 				573EDE3B2C64C27900CBCB9F /* Item.swift in Sources */,
 				573EDE372C64C27900CBCB9F /* TheCaffeteriaApp.swift in Sources */,
 				5734BED12CECFD13002A5D5B /* String.swift in Sources */,
+				5734BED32CEDA2E1002A5D5B /* CommonViews.swift in Sources */,
 				5734BECF2CECFA8F002A5D5B /* RestaurantMenuView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
