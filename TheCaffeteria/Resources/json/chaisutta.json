@@ -1,0 +1,138 @@
+{
+    "section": [
+      {
+        "section": "01_favourite",
+        "sectionName": "Customer Favourites",
+        "values": [
+          {
+            "itemId": "0101",
+            "itemName": "Pani Puri(6pcs)",
+            "itemPrice": "₹35.00",
+            "itemReviewsCount": "12",
+            "itemRating": "4.7",
+            "itemDescription": "Crispy hollow puris filled with spicy mint water and potato filling",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/p/a/pani_puri.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0201",
+            "itemName": "Haldiram's Aloo Bhujia",
+            "itemPrice": "₹25.00",
+            "itemReviewsCount": "45",
+            "itemRating": "4.4",
+            "itemDescription": "Spicy potato noodle snack",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/a/l/aloo_bhujia.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0301",
+            "itemName": "Sweet Lassi",
+            "itemPrice": "₹35.00",
+            "itemReviewsCount": "22",
+            "itemRating": "4.6",
+            "itemDescription": "Traditional yogurt-based sweet drink",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/s/w/sweet_lassi.jpg",
+            "isVeg": "y"
+          }
+        ]
+      },
+      {
+        "section": "02_chaat",
+        "sectionName": "Chaat",
+        "values": [
+          {
+            "itemId": "0101",
+            "itemName": "Bhelpuri(100gm)",
+            "itemPrice": "₹40.00",
+            "itemReviewsCount": "7",
+            "itemRating": "4.3",
+            "itemDescription": "Classic street food made with puffed rice, vegetables, and tangy chutneys",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/b/h/bhel_puri.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0102",
+            "itemName": "Pani Puri(6pcs)",
+            "itemPrice": "₹35.00",
+            "itemReviewsCount": "12",
+            "itemRating": "4.7",
+            "itemDescription": "Crispy hollow puris filled with spicy mint water and potato filling",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/p/a/pani_puri.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0103",
+            "itemName": "Dahi Puri(6pcs)",
+            "itemPrice": "₹45.00",
+            "itemReviewsCount": "9",
+            "itemRating": "4.5",
+            "itemDescription": "Crispy puris topped with yogurt, chutneys and sev",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/d/a/dahi_puri.jpg",
+            "isVeg": "y"
+          }
+        ]
+      },
+      {
+        "section": "03_mrp",
+        "sectionName": "MRP Items",
+        "values": [
+          {
+            "itemId": "0201",
+            "itemName": "Calvins Garden diet bhel",
+            "itemPrice": "₹10.00",
+            "itemReviewsCount": "32",
+            "itemRating": "4.6",
+            "itemDescription": "Healthy and light bhel mix perfect for weight watchers",
+            "itemImage": "https://www.bigbasket.com/media/uploads/p/l/205722_8-garden-diet-bhel-mumbai-special-crispy-crunchy.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0202",
+            "itemName": "Haldiram's Aloo Bhujia",
+            "itemPrice": "₹25.00",
+            "itemReviewsCount": "45",
+            "itemRating": "4.4",
+            "itemDescription": "Spicy potato noodle snack",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/a/l/aloo_bhujia.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0203",
+            "itemName": "Kurkure Masala Munch",
+            "itemPrice": "₹20.00",
+            "itemReviewsCount": "28",
+            "itemRating": "4.2",
+            "itemDescription": "Crunchy corn puffs with spicy masala coating",
+            "itemImage": "https://www.bigbasket.com/media/uploads/p/l/294297_8-kurkure-namkeen-masala-munch.jpg",
+            "isVeg": "y"
+          }
+        ]
+      },
+      {
+        "section": "04_beverages",
+        "sectionName": "Beverages",
+        "values": [
+          {
+            "itemId": "0301",
+            "itemName": "Masala Chaas",
+            "itemPrice": "₹25.00",
+            "itemReviewsCount": "15",
+            "itemRating": "4.5",
+            "itemDescription": "Spiced buttermilk with mint and cumin",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/m/a/masala_chaas.jpg",
+            "isVeg": "y"
+          },
+          {
+            "itemId": "0302",
+            "itemName": "Sweet Lassi",
+            "itemPrice": "₹35.00",
+            "itemReviewsCount": "22",
+            "itemRating": "4.6",
+            "itemDescription": "Traditional yogurt-based sweet drink",
+            "itemImage": "https://www.haldirams.com/media/catalog/product/cache/71134970afb779eb7860339989626b7e/s/w/sweet_lassi.jpg",
+            "isVeg": "y"
+          }
+        ]
+      }
+    ]
+  }

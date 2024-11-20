@@ -1,0 +1,32 @@
+//
+//  MenuData.swift
+//  TheCaffeteria
+//
+//  Created by Sonal on 19/11/24.
+//
+
+import Foundation
+
+struct MenuData: Codable {
+    let section: [Section]
+}
+
+struct Section: Codable, Identifiable {
+    let section: String
+    let sectionName: String
+    let values: [MenuItem]
+    
+    var id: String { section }
+}
+
+struct MenuItem: Codable, Identifiable {
+    let itemId: String
+    let itemName: String
+    let itemPrice: String
+    let itemReviewsCount: String
+    let itemRating: String
+    let itemDescription: String
+    let itemImage: String
+    
+    var id: String { itemId }
+}
