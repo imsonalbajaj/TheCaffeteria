@@ -26,19 +26,19 @@ struct NetworkImageView: View {
                     image
                         .resizable()
                 case .failure:
-                    Image(placeHolderImg)
+                    Image(systemName: "camera.metering.unknown")
                         .resizable()
-                        //.scaledToFill()
-                        .foregroundColor(.red)
+                        .scaledToFill()
+                        .foregroundColor(Color.getColor(color: .dark216))
                 @unknown default:
                     EmptyView()
                 }
             }
         } else {
-            Image(placeHolderImg)
+            Image(systemName: "camera.metering.unknown")
                 .resizable()
                 .scaledToFill()
-                .foregroundColor(.red)
+                .foregroundColor(Color.getColor(color: .dark216))
         }
         
     }
