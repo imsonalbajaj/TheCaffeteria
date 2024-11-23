@@ -11,41 +11,89 @@ struct RestaurantMenuView: View {
     @StateObject private var viewModel = RestaurantMenuViewModel()
     @State private var searchText = ""
     @State private var selectedCategory: String = "01_favourite"
+    @State private var showStaticSearchBar = false
+    @State private var geometryValue: CGRect = .zero // State to track geometry value
     
     var body: some View {
         VStack(spacing: 0) {
+            Rectangle()
+                .frame(height: TOP_INSET)
+            
             headerView
+                .frame(height: 40)
+                .background(Color.getColor(color: .secondaryRed))
+                .onAppear {
+                    print(TOP_INSET)
+                }
+            
+            
             
             if let menuData = viewModel.menuData {
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 16) {
-                            NetworkImageView(imageUrl: menuData.section.first?.values.first?.itemImage ?? "")
-                                .frame(height: 200)
-                                .clipped()
-                            
-                            cafeteriaInfo
-                            searchBar
-                            categoryPills
-                            
-                            ForEach(menuData.section) { section in
-                                MenuSection(section: section)
-                                    .id(section.section)
+                ZStack(alignment: .top) {
+                    ScrollViewReader { proxy in
+                        ScrollView {
+                            VStack(alignment: .leading, spacing: 16) {
+                                NetworkImageView(imageUrl: menuData.section.first?.values.first?.itemImage ?? "")
+                                    .frame(height: 200)
+                                    .clipped()
+                                
+                                cafeteriaInfo
+                                
+                                GeometryReader { geometry in
+                                    Color.clear
+                                        .frame(height: 0)
+                                        .onChange(of: geometry.frame(in: .global)) {
+                                            if ((Int(geometry.frame(in: .global).midY) - Int(TOP_INSET) - 40) < 0) {
+                                                showStaticSearchBar = true
+                                            } else {
+                                                showStaticSearchBar = false
+                                            }
+                                        }
+                                }
+                                .frame(height: 1)
+                                
+                                ZStack {
+                                    VStack(spacing: 0) {
+                                        searchBar
+                                        categoryPills
+                                    }
+                                    if showStaticSearchBar {
+                                        Color.white
+                                    }
+                                }
+                                
+                                
+                                
+                                
+                                
+                                ForEach(menuData.section) { section in
+                                    MenuSection(section: section)
+                                        .id(section.section)
+                                }
+                            }
+                        }
+                        .onChange(of: selectedCategory) {
+                            withAnimation {
+                                proxy.scrollTo(selectedCategory, anchor: .top)
                             }
                         }
                     }
-                    .onChange(of: selectedCategory) {
-                        withAnimation {
-                            proxy.scrollTo(selectedCategory, anchor: .top)
+                    
+                    if showStaticSearchBar {
+                        VStack(spacing: 0) {
+                            searchBar
+                            categoryPills
                         }
                     }
                 }
+                
             } else {
                 ProgressView()
                     .progressViewStyle(CircularProgressViewStyle())
             }
         }
         .navigationBarHidden(true)
+        .ignoresSafeArea(edges: .top)
     }
     
     // MARK: - Header View
@@ -58,11 +106,10 @@ struct RestaurantMenuView: View {
             Text("YGKH Tuckshop")
                 .font(.title3)
                 .fontWeight(.semibold)
-                .foregroundColor(Color.getColor(color: .dark48))
+                .foregroundColor(Color.white)
             Spacer()
         }
         .padding(16)
-        .background(Color.white)
     }
     
     // MARK: - Cafeteria Info
@@ -87,17 +134,19 @@ struct RestaurantMenuView: View {
     private var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(.purple)
+                .foregroundColor(Color.getColor(color: .secondaryRed))
             TextField("Find items, food categories...", text: $searchText)
                 .foregroundColor(.gray)
             Spacer()
             Image(systemName: "slider.horizontal.3")
-                .foregroundColor(.purple)
+                .foregroundColor(Color.getColor(color: .secondaryRed))
         }
-        .padding()
+        .padding(16)
         .background(Color(.systemGray6))
         .cornerRadius(10)
-        .padding(.horizontal)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(Color.white)
     }
     
     // MARK: - Category Pills
@@ -116,8 +165,11 @@ struct RestaurantMenuView: View {
                     }
                 }
             }
-            .padding(.horizontal)
         }
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
+        .background(Color.white)
+        
     }
 }
 
@@ -129,10 +181,10 @@ struct CategoryPill: View {
     
     var body: some View {
         Text(title)
-            .foregroundColor(isSelected ? .purple : .black)
+            .foregroundColor(isSelected ? Color.getColor(color: .secondaryRed) : .black)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
-            .background(isSelected ? Color.purple.opacity(0.1) : Color.clear)
+            .background(isSelected ? Color.getColor(color: .secondaryRed).opacity(0.1) : Color.clear)
             .cornerRadius(20)
     }
 }

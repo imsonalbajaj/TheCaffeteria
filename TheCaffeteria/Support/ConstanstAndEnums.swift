@@ -5,7 +5,25 @@
 //  Created by Sonal on 20/11/24.
 //
 
-import Foundation
+import UIKit
+
+// MARK: constant's
+
+let TOP_INSET: CGFloat = UIApplication.shared.connectedScenes
+    .compactMap { $0 as? UIWindowScene }
+    .flatMap { $0.windows }
+    .first { $0.isKeyWindow }?
+    .safeAreaInsets.top ?? 0
+
+let BOTTOM_INSET: CGFloat = UIApplication.shared.connectedScenes
+    .compactMap { $0 as? UIWindowScene }
+    .first?
+    .keyWindow?
+    .safeAreaInsets.bottom ?? 0
+
+let HEIGHT: CGFloat = UIScreen.main.bounds.height
+let WIDTH: CGFloat = UIScreen.main.bounds.width
+
 
 
 // MARK: enum's
@@ -20,6 +38,6 @@ enum CustomColor {
     case mbGreenSelectedBackGround
     case primaryRed
     case secondaryRed
-    case dullOrange
+    case foodPrimaryGreen
     case ratingYellow
 }

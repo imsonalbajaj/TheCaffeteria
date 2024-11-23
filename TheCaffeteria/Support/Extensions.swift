@@ -32,13 +32,13 @@ extension Color {
             return Color(red: 237 / 255, green: 250 / 255, blue: 249 / 255)
             
         case .primaryRed:
-            return Color(red: 234 / 255, green: 73 / 255, blue: 97 / 255)
+            return Color(red: 216 / 255, green: 35 / 255, blue: 42 / 255)
             
         case .secondaryRed:
-            return Color(red: 245 / 255, green: 130 / 255, blue: 125 / 255)
+            return Color(red: 226 / 255, green: 76 / 255, blue: 82 / 255)
             
-        case .dullOrange:
-            return Color(red: 252 / 255, green: 206 / 255, blue: 170 / 255)
+        case .foodPrimaryGreen:
+            return Color(red: 66 / 255, green: 134 / 255, blue: 18 / 255)
             
         case .ratingYellow:
             return Color(red: 254 / 255, green: 236 / 255, blue: 55 / 255)
