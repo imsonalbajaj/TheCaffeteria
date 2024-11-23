@@ -12,14 +12,16 @@ struct MenuSection: View {
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
-            Text(section.sectionName)
+            Text(section.sectionName ?? "")
                 .font(.title3)
                 .fontWeight(.semibold)
                 .padding(.horizontal, 16)
                 .padding(.vertical, 8)
             
-            ForEach(section.values) { item in
-                MenuItemRow(item: item)
+            if let arr = section.values {
+                ForEach(arr) { item in
+                    MenuItemRow(item: item)
+                }
             }
             
             Rectangle()
@@ -43,7 +45,7 @@ struct MenuItemRow: View {
                         .foregroundColor(.green)
                 }
                 
-                Text(item.itemName)
+                Text(item.itemName ?? "")
                     .font(.system(size: 16, weight: .medium))
                     .fontWeight(.medium)
                     .foregroundColor(Color.getColor(color: .dark48))
@@ -51,13 +53,13 @@ struct MenuItemRow: View {
                 HStack(spacing: 2){
                     Image(systemName: "star.fill")
                         .foregroundColor(Color.getColor(color: .ratingYellow))
-                    Text(item.itemRating)
+                    Text(item.itemRating ?? "")
                         .foregroundColor(Color.getColor(color: .dark144))
-                    Text("(\(item.itemReviewsCount))")
+                    Text("(\(item.itemReviewsCount ?? ""))")
                         .foregroundColor(Color.getColor(color: .dark144))
                 }
                 
-                Text(item.itemPrice)
+                Text(item.itemPrice ?? "")
                     .font(.system(size: 16, weight: .medium))
                     .foregroundColor(Color.getColor(color: .secondaryRed))
             }
@@ -65,7 +67,7 @@ struct MenuItemRow: View {
             Spacer()
             
             VStack(alignment: .center, spacing: 0) {
-                NetworkImageView(imageUrl: item.itemImage, placeHolderImg: "")
+                NetworkImageView(imageUrl: item.itemImage ?? "", placeHolderImg: "")
                     .scaledToFill()
                     .frame(width: 150, height: 120)
                     .clipShape(RoundedRectangle(cornerRadius: 8))

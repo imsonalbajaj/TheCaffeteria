@@ -19,72 +19,75 @@ struct RestaurantMenuView: View {
             Rectangle()
                 .frame(height: TOP_INSET)
             
-            headerView
-                .frame(height: 40)
-                .background(Color.getColor(color: .secondaryRed))
-                .onAppear {
-                    print(TOP_INSET)
-                }
-            
-            
-            
             if let menuData = viewModel.menuData {
-                ZStack(alignment: .top) {
-                    ScrollViewReader { proxy in
-                        ScrollView {
-                            VStack(alignment: .leading, spacing: 16) {
-                                NetworkImageView(imageUrl: menuData.section.first?.values.first?.itemImage ?? "")
-                                    .frame(height: 200)
-                                    .clipped()
-                                
-                                cafeteriaInfo
-                                
-                                GeometryReader { geometry in
-                                    Color.clear
-                                        .frame(height: 0)
-                                        .onChange(of: geometry.frame(in: .global)) {
-                                            if ((Int(geometry.frame(in: .global).midY) - Int(TOP_INSET) - 40) < 0) {
-                                                showStaticSearchBar = true
-                                            } else {
-                                                showStaticSearchBar = false
+                headerView
+                    .frame(height: 40)
+                    .background(Color.getColor(color: .secondaryRed))
+                    .onAppear {
+                        print(TOP_INSET)
+                    }
+                
+                if let sectionArr = menuData.section, sectionArr.count > 0 {
+                    ZStack(alignment: .top) {
+                        ScrollViewReader { proxy in
+                            ScrollView {
+                                VStack(alignment: .leading, spacing: 16) {
+                                    NetworkImageView(imageUrl: menuData.restarantImg ?? "")
+                                        .frame(height: 200)
+                                        .clipped()
+                                    
+                                    cafeteriaInfo
+                                    
+                                    GeometryReader { geometry in
+                                        Color.clear
+                                            .frame(height: 0)
+                                            .onChange(of: geometry.frame(in: .global)) {
+                                                if ((Int(geometry.frame(in: .global).midY) - Int(TOP_INSET) - 40) < 0) {
+                                                    showStaticSearchBar = true
+                                                } else {
+                                                    showStaticSearchBar = false
+                                                }
                                             }
+                                    }
+                                    .frame(height: 1)
+                                    
+                                    ZStack {
+                                        VStack(spacing: 0) {
+                                            searchBar
+                                            categoryPills
                                         }
-                                }
-                                .frame(height: 1)
-                                
-                                ZStack {
-                                    VStack(spacing: 0) {
-                                        searchBar
-                                        categoryPills
+                                        if showStaticSearchBar {
+                                            Color.white
+                                        }
                                     }
-                                    if showStaticSearchBar {
-                                        Color.white
+                                    
+                                    ForEach(sectionArr) { section in
+                                        if section.values?.count ?? 0 > 0 {
+                                            MenuSection(section: section)
+                                                .id(section.section)
+                                            
+                                        } else {
+                                            EmptyView()
+                                        }
                                     }
                                 }
-                                
-                                
-                                
-                                
-                                
-                                ForEach(menuData.section) { section in
-                                    MenuSection(section: section)
-                                        .id(section.section)
+                            }
+                            .onChange(of: selectedCategory) {
+                                withAnimation {
+                                    proxy.scrollTo(selectedCategory, anchor: .top)
                                 }
                             }
                         }
-                        .onChange(of: selectedCategory) {
-                            withAnimation {
-                                proxy.scrollTo(selectedCategory, anchor: .top)
+                        
+                        if showStaticSearchBar {
+                            VStack(spacing: 0) {
+                                searchBar
+                                categoryPills
                             }
                         }
                     }
-                    
-                    if showStaticSearchBar {
-                        VStack(spacing: 0) {
-                            searchBar
-                            categoryPills
-                        }
-                    }
+                } else {
+                    Text("Not available")
                 }
                 
             } else {
@@ -99,11 +102,13 @@ struct RestaurantMenuView: View {
     // MARK: - Header View
     private var headerView: some View {
         HStack {
-            Button(action: {}) {
+            Button {
+            } label: {
                 Image(systemName: "arrow.left")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundColor(Color.white)
             }
-            Text("YGKH Tuckshop")
+
+            Text(viewModel.menuData?.restarantName ?? "")
                 .font(.title3)
                 .fontWeight(.semibold)
                 .foregroundColor(Color.white)
@@ -150,26 +155,29 @@ struct RestaurantMenuView: View {
     }
     
     // MARK: - Category Pills
+    @ViewBuilder
     private var categoryPills: some View {
-        ScrollView(.horizontal, showsIndicators: false) {
-            HStack(spacing: 12) {
-                if let sections = viewModel.menuData?.section {
-                    ForEach(sections) { section in
+        if let sectionArr = viewModel.menuData?.section {
+            ScrollView(.horizontal, showsIndicators: false) {
+                HStack(spacing: 12) {
+                    ForEach(sectionArr) { section in
                         CategoryPill(
-                            title: section.sectionName,
+                            title: section.sectionName ?? "",
                             isSelected: selectedCategory == section.section
                         )
                         .onTapGesture {
-                            selectedCategory = section.section
+                            selectedCategory = section.section ?? ""
                         }
                     }
+                    
                 }
             }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            .background(Color.white)
+        } else {
+            EmptyView()
         }
-        .padding(.horizontal, 16)
-        .padding(.vertical, 8)
-        .background(Color.white)
-        
     }
 }
 
