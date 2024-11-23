@@ -157,23 +157,36 @@ struct RestaurantMenuView: View {
     @ViewBuilder
     private var categoryPills: some View {
         if let sectionArr = viewModel.menuData?.section {
-            ScrollView(.horizontal, showsIndicators: false) {
-                HStack(spacing: 12) {
-                    ForEach(sectionArr) { section in
-                        CategoryPill(
-                            title: section.sectionName ?? "",
-                            isSelected: selectedCategory == section.section
-                        )
-                        .onTapGesture {
-                            selectedCategory = section.section ?? ""
+            ScrollViewReader { proxy in
+                ScrollView(.horizontal, showsIndicators: false) {
+                    HStack(spacing: 12) {
+                        ForEach(sectionArr) { section in
+                            CategoryPill(
+                                title: section.sectionName ?? "",
+                                isSelected: selectedCategory == section.section
+                            )
+                            .onTapGesture {
+                                selectedCategory = section.section ?? ""
+                            }
                         }
+                        
                     }
-                    
+                }
+                .padding(.horizontal, 16)
+                .padding(.vertical, 4)
+                .background(Color.white)
+                .onChange(of: selectedCategory) {
+                    withAnimation {
+                        proxy.scrollTo(selectedCategory, anchor: .top)
+                    }
+                }
+                .onAppear {
+                    withAnimation {
+                        proxy.scrollTo(selectedCategory, anchor: .center)
+                    }
                 }
             }
-            .padding(.horizontal, 16)
-            .padding(.vertical, 4)
-            .background(Color.white)
+            
         } else {
             EmptyView()
         }
