@@ -31,7 +31,7 @@ struct RestaurantMenuView: View {
                     ZStack(alignment: .top) {
                         ScrollViewReader { proxy in
                             ScrollView {
-                                VStack(alignment: .leading, spacing: 16) {
+                                VStack(alignment: .leading, spacing: 0) {
                                     NetworkImageView(imageUrl: menuData.restarantImg ?? "")
                                         .frame(height: 200)
                                         .clipped()
@@ -49,7 +49,7 @@ struct RestaurantMenuView: View {
                                                 }
                                             }
                                     }
-                                    .frame(height: 1)
+                                    .frame(height: 0)
                                     
                                     ZStack {
                                         VStack(spacing: 0) {
@@ -132,7 +132,8 @@ struct RestaurantMenuView: View {
             Text("by verified user's")
                 .foregroundColor(Color.getColor(color: .dark96))
         }
-        .padding(16)
+        .padding(.horizontal, 16)
+        .padding(.vertical, 8)
     }
     
     // MARK: - Search Bar
@@ -143,8 +144,6 @@ struct RestaurantMenuView: View {
             TextField("Find items, food categories...", text: $searchText)
                 .foregroundColor(.gray)
             Spacer()
-            Image(systemName: "slider.horizontal.3")
-                .foregroundColor(Color.getColor(color: .secondaryRed))
         }
         .padding(16)
         .background(Color(.systemGray6))
@@ -173,7 +172,7 @@ struct RestaurantMenuView: View {
                 }
             }
             .padding(.horizontal, 16)
-            .padding(.vertical, 8)
+            .padding(.vertical, 4)
             .background(Color.white)
         } else {
             EmptyView()
