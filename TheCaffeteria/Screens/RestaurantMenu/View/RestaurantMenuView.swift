@@ -9,10 +9,6 @@ import SwiftUI
 
 struct RestaurantMenuView: View {
     @StateObject private var viewModel = RestaurantMenuViewModel()
-    @State private var searchText = ""
-    @State private var selectedCategory: String = "01_favourite"
-    @State private var showStaticSearchBar = false
-    @State private var geometryValue: CGRect = .zero // State to track geometry value
     
     var body: some View {
         VStack(spacing: 0) {
@@ -43,9 +39,9 @@ struct RestaurantMenuView: View {
                                             .frame(height: 0)
                                             .onChange(of: geometry.frame(in: .global)) {
                                                 if ((Int(geometry.frame(in: .global).midY) - Int(TOP_INSET) - 40) < 0) {
-                                                    showStaticSearchBar = true
+                                                    viewModel.showStaticSearchBar = true
                                                 } else {
-                                                    showStaticSearchBar = false
+                                                    viewModel.showStaticSearchBar = false
                                                 }
                                             }
                                     }
@@ -56,7 +52,7 @@ struct RestaurantMenuView: View {
                                             searchBar
                                             categoryPills
                                         }
-                                        if showStaticSearchBar {
+                                        if viewModel.showStaticSearchBar {
                                             Color.white
                                         }
                                     }
@@ -72,14 +68,14 @@ struct RestaurantMenuView: View {
                                     }
                                 }
                             }
-                            .onChange(of: selectedCategory) {
+                            .onChange(of: viewModel.selectedCategory) {
                                 withAnimation {
-                                    proxy.scrollTo(selectedCategory, anchor: .top)
+                                    proxy.scrollTo(viewModel.selectedCategory, anchor: .top)
                                 }
                             }
                         }
                         
-                        if showStaticSearchBar {
+                        if viewModel.showStaticSearchBar {
                             VStack(spacing: 0) {
                                 searchBar
                                 categoryPills
@@ -141,7 +137,7 @@ struct RestaurantMenuView: View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundColor(Color.getColor(color: .secondaryRed))
-            TextField("Find items, food categories...", text: $searchText)
+            TextField("Find items, food categories...", text: $viewModel.searchText)
                 .foregroundColor(.gray)
             Spacer()
         }
@@ -163,10 +159,10 @@ struct RestaurantMenuView: View {
                         ForEach(sectionArr) { section in
                             CategoryPill(
                                 title: section.sectionName ?? "",
-                                isSelected: selectedCategory == section.section
+                                isSelected: viewModel.selectedCategory == section.section
                             )
                             .onTapGesture {
-                                selectedCategory = section.section ?? ""
+                                viewModel.selectedCategory = section.section ?? ""
                             }
                         }
                         
@@ -175,14 +171,14 @@ struct RestaurantMenuView: View {
                 .padding(.horizontal, 16)
                 .padding(.vertical, 4)
                 .background(Color.white)
-                .onChange(of: selectedCategory) {
+                .onChange(of: viewModel.selectedCategory) {
                     withAnimation {
-                        proxy.scrollTo(selectedCategory, anchor: .top)
+                        proxy.scrollTo(viewModel.selectedCategory, anchor: .top)
                     }
                 }
                 .onAppear {
                     withAnimation {
-                        proxy.scrollTo(selectedCategory, anchor: .center)
+                        proxy.scrollTo(viewModel.selectedCategory, anchor: .center)
                     }
                 }
             }
