@@ -19,9 +19,6 @@ struct RestaurantMenuView: View {
                 headerView
                     .frame(height: 40)
                     .background(Color.getColor(color: .secondaryRed))
-                    .onAppear {
-                        print(TOP_INSET)
-                    }
                 
                 if let sectionArr = menuData.section, sectionArr.count > 0 {
                     ZStack(alignment: .top) {
