@@ -9,6 +9,7 @@ import SwiftUI
 
 struct RestaurantMenuView: View {
     @StateObject private var viewModel = RestaurantMenuViewModel()
+    @FocusState private var searchBarFocusState: Int?
     
     var body: some View {
         VStack(spacing: 0) {
@@ -44,14 +45,10 @@ struct RestaurantMenuView: View {
                                     }
                                     .frame(height: 0)
                                     
-                                    ZStack {
-                                        VStack(spacing: 0) {
-                                            searchBar
-                                            categoryPills
-                                        }
-                                        if viewModel.showStaticSearchBar {
-                                            Color.white
-                                        }
+                                    VStack(spacing: 0) {
+                                        searchBar
+                                            .focused($searchBarFocusState, equals: 1)
+                                        categoryPills
                                     }
                                     
                                     ForEach(sectionArr) { section in
@@ -75,8 +72,21 @@ struct RestaurantMenuView: View {
                         if viewModel.showStaticSearchBar {
                             VStack(spacing: 0) {
                                 searchBar
+                                    .focused($searchBarFocusState, equals: 2)
                                 categoryPills
                             }
+                            .onAppear{
+                                if let val = searchBarFocusState, val == 1 {
+                                    searchBarFocusState = 2
+                                }
+                            }
+                        } else {
+                            Color.clear.frame(height: 0)
+                                .onAppear{
+                                    if let val = searchBarFocusState, val == 2 {
+                                        searchBarFocusState = 1
+                                    }
+                                }
                         }
                     }
                 } else {
