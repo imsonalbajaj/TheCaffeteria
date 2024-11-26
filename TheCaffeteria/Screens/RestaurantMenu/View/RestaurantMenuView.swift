@@ -110,7 +110,7 @@ struct RestaurantMenuView: View {
                 Image(systemName: "arrow.left")
                     .foregroundColor(Color.white)
             }
-
+            
             Text(viewModel.menuData?.restarantName ?? "")
                 .font(.title3)
                 .fontWeight(.semibold)
@@ -195,21 +195,5 @@ struct RestaurantMenuView: View {
         } else {
             EmptyView()
         }
-    }
-}
-
-
-// MARK: - Supporting Views
-struct CategoryPill: View {
-    let title: String
-    let isSelected: Bool
-    
-    var body: some View {
-        Text(title)
-            .foregroundColor(isSelected ? Color.getColor(color: .secondaryRed) : .black)
-            .padding(.horizontal, 16)
-            .padding(.vertical, 8)
-            .background(isSelected ? Color.getColor(color: .secondaryRed).opacity(0.1) : Color.clear)
-            .cornerRadius(20)
     }
 }
