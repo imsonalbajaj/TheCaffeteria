@@ -146,6 +146,8 @@ struct RestaurantMenuView: View {
                 .foregroundColor(Color.getColor(color: .secondaryRed))
             TextField("Find items, food categories...", text: $viewModel.searchText)
                 .foregroundColor(.gray)
+                .disableAutocorrection(true)
+                .keyboardType(.namePhonePad)
             Spacer()
         }
         .padding(16)
