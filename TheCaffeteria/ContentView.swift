@@ -16,14 +16,14 @@ struct ContentView: View {
 
     var body: some View {
         NavigationSplitView {
-            RestaurantMenuView()
+            MainTabView()
         } detail: {
             Text("Select an item")
         }
     }
 }
 
-#Preview {
-    ContentView()
-//        .modelContainer(for: Item.self, inMemory: true)
-}
+//#Preview {
+//    ContentView()
+////        .modelContainer(for: Item.self, inMemory: true)
+//}

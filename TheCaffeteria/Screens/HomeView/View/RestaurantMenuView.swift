@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct RestaurantMenuView: View {
+    @Environment(\.dismiss) private var dismiss
     @StateObject private var viewModel = RestaurantMenuViewModel()
     @FocusState private var searchBarFocusState: Int?
     
@@ -98,6 +99,9 @@ struct RestaurantMenuView: View {
                     .progressViewStyle(CircularProgressViewStyle())
             }
         }
+        .onTapGesture {
+            searchBarFocusState = nil
+        }
         .navigationBarHidden(true)
         .ignoresSafeArea(edges: .top)
     }
@@ -106,6 +110,7 @@ struct RestaurantMenuView: View {
     private var headerView: some View {
         HStack {
             Button {
+                dismiss()
             } label: {
                 Image(systemName: "arrow.left")
                     .foregroundColor(Color.white)
