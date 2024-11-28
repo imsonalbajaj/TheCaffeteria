@@ -114,13 +114,13 @@ struct RestaurantMenuView: View {
                 dismiss()
             } label: {
                 Image(systemName: "arrow.left")
-                    .foregroundColor(Color.white)
+                    .foregroundStyle(Color.white)
             }
             
             Text(viewModel.menuData?.restarantName ?? "")
                 .font(.title3)
                 .fontWeight(.semibold)
-                .foregroundColor(Color.white)
+                .foregroundStyle(Color.white)
             Spacer()
         }
         .padding(16)
@@ -130,16 +130,16 @@ struct RestaurantMenuView: View {
     private var cafeteriaInfo: some View {
         HStack(spacing: 2) {
             Text("Rated")
-                .foregroundColor(Color.getColor(color: .dark96))
+                .foregroundStyle(Color.getColor(color: .dark96))
             
             Text("4.5")
-                .foregroundColor(Color.getColor(color: .dark96))
+                .foregroundStyle(Color.getColor(color: .dark96))
             
             Image(systemName: "star.fill")
-                .foregroundColor(Color.getColor(color: .ratingYellow))
+                .foregroundStyle(Color.getColor(color: .ratingYellow))
             
             Text("by verified user's")
-                .foregroundColor(Color.getColor(color: .dark96))
+                .foregroundStyle(Color.getColor(color: .dark96))
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
@@ -149,9 +149,9 @@ struct RestaurantMenuView: View {
     private var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundColor(Color.getColor(color: .secondaryRed))
+                .foregroundStyle(Color.getColor(color: .secondaryRed))
             TextField("Find items, food categories...", text: $viewModel.searchText)
-                .foregroundColor(.gray)
+                .foregroundStyle(.gray)
                 .disableAutocorrection(true)
                 .keyboardType(.namePhonePad)
             Spacer()

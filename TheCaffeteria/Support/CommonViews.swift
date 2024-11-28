@@ -29,7 +29,7 @@ struct NetworkImageView: View {
                     Image(systemName: "camera.metering.unknown")
                         .resizable()
                         .scaledToFill()
-                        .foregroundColor(Color.getColor(color: .dark216))
+                        .foregroundStyle(Color.getColor(color: .dark216))
                 @unknown default:
                     EmptyView()
                 }
@@ -38,7 +38,7 @@ struct NetworkImageView: View {
             Image(systemName: "camera.metering.unknown")
                 .resizable()
                 .scaledToFill()
-                .foregroundColor(Color.getColor(color: .dark216))
+                .foregroundStyle(Color.getColor(color: .dark216))
         }
         
     }

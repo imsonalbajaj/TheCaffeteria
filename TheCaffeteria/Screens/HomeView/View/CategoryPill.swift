@@ -13,7 +13,7 @@ struct CategoryPill: View {
     
     var body: some View {
         Text(title)
-            .foregroundColor(isSelected ? Color.getColor(color: .secondaryRed) : .black)
+            .foregroundStyle(isSelected ? Color.getColor(color: .secondaryRed) : .black)
             .padding(.horizontal, 16)
             .padding(.vertical, 8)
             .background(isSelected ? Color.getColor(color: .secondaryRed).opacity(0.1) : Color.clear)

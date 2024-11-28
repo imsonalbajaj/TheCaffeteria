@@ -24,7 +24,7 @@ struct MoreView: View {
                 .scaledToFill()
                 .frame(width: 50, height: 50)
                 .background(Color.black)
-                .foregroundColor(Color.white)
+                .foregroundStyle(Color.white)
                 .clipShape(Circle())
                 .padding(.top, 16)
             
@@ -32,16 +32,16 @@ struct MoreView: View {
                 Text("Sonal")
                     .font(.title3)
                     .fontWeight(.semibold)
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
                 Button {
                     dropdownTapped.toggle()
                 } label: {
                     HStack(spacing: 5) {
                         Image(systemName: dropdownTapped ? "arrow.up" : "arrow.down")
-                            .foregroundColor(Color.getColor(color: .secondaryRed).opacity(0.8))
+                            .foregroundStyle(Color.getColor(color: .secondaryRed).opacity(0.8))
 
                         Text( dropdownTapped ? "account details" : "view account details")
-                            .foregroundColor(Color.getColor(color: .secondaryRed).opacity(0.8))
+                            .foregroundStyle(Color.getColor(color: .secondaryRed).opacity(0.8))
                     }
                 }
                 
@@ -62,36 +62,36 @@ struct MoreView: View {
         HStack(spacing: 4) {
             VStack(alignment: .leading, spacing: 0) {
                 Text("name")
-                    .foregroundColor(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.getColor(color: .dark96))
                 
                 Text("email")
-                    .foregroundColor(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.getColor(color: .dark96))
 
                 Text("phone-no")
-                    .foregroundColor(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.getColor(color: .dark96))
             }
             
             VStack(spacing: 0) {
                 Text(" : ")
-                    .foregroundColor(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.getColor(color: .dark96))
 
                 Text(" : ")
-                    .foregroundColor(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.getColor(color: .dark96))
 
                 Text(" : ")
-                    .foregroundColor(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.getColor(color: .dark96))
 
             }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("sonal")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
                 
                 Text("mail@mail.com")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
                 
                 Text("9990001234")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
 
             }
         }
@@ -102,10 +102,10 @@ struct MoreView: View {
         VStack {
             HStack(spacing: 16) {
                 Image(systemName: "heart.fill")
-                    .foregroundColor(Color.red)
+                    .foregroundStyle(Color.red)
 
                 Text("Favourite")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
 
                 Spacer()
             }
@@ -114,9 +114,9 @@ struct MoreView: View {
             
             HStack(spacing: 16) {
                 Image(systemName: "questionmark.circle")
-                    .foregroundColor(Color.black)
+                    .foregroundStyle(Color.black)
                 Text("Favourite")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
                 Spacer()
             }
             .padding(.horizontal, 32)
@@ -124,10 +124,10 @@ struct MoreView: View {
             
             HStack(spacing: 16) {
                 Image(systemName: "arrow.uturn.backward.square")
-                    .foregroundColor(Color.blue)
+                    .foregroundStyle(Color.blue)
                 
                 Text("Log out")
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
                 Spacer()
             }
             .padding(.horizontal, 32)

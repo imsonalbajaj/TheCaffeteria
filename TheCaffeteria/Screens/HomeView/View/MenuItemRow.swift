@@ -15,29 +15,29 @@ struct MenuItemRow: View {
             VStack(alignment: .leading, spacing: 8) {
                 HStack {
                     Image(systemName: "heart")
-                        .foregroundColor(.gray)
+                        .foregroundStyle(.gray)
                         .padding(.trailing, 4)
                     Image(systemName: "leaf.circle.fill")
-                        .foregroundColor(.green)
+                        .foregroundStyle(.green)
                 }
                 
                 Text(item.itemName ?? "")
                     .font(.system(size: 16, weight: .medium))
                     .fontWeight(.medium)
-                    .foregroundColor(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.getColor(color: .dark48))
                 
                 HStack(spacing: 2){
                     Image(systemName: "star.fill")
-                        .foregroundColor(Color.getColor(color: .ratingYellow))
+                        .foregroundStyle(Color.getColor(color: .ratingYellow))
                     Text(item.itemRating ?? "")
-                        .foregroundColor(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color.getColor(color: .dark144))
                     Text("(\(item.itemReviewsCount ?? ""))")
-                        .foregroundColor(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color.getColor(color: .dark144))
                 }
                 
                 Text(item.itemPrice ?? "")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundColor(Color.getColor(color: .secondaryRed))
+                    .foregroundStyle(Color.getColor(color: .secondaryRed))
             }
             
             Spacer()
@@ -69,17 +69,17 @@ struct MenuItemRow: View {
             HStack(spacing: 6){
                 Text("-")
                     .fontWeight(.medium)
-                    .foregroundColor(Color.white)
+                    .foregroundStyle(Color.white)
                     .onTapGesture {
                     }
                 
                 Text("ADD")
                     .fontWeight(.medium)
-                    .foregroundColor(Color.white)
+                    .foregroundStyle(Color.white)
                 
                 Text("+")
                     .fontWeight(.medium)
-                    .foregroundColor(Color.white)
+                    .foregroundStyle(Color.white)
                     .onTapGesture {
                     }
             }
