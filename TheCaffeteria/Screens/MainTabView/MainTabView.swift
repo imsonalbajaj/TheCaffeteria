@@ -18,12 +18,12 @@ struct MainTabView: View {
 
             OrdersView()
                 .tabItem {
-                    Image(systemName: "magnifyingglass")
-                    Text("Search")
+                    Image(systemName: "pencil.and.list.clipboard.rtl")
+                    Text("Orders")
                 }
 
             
         }
-        .accentColor(.red) // Customize the selected tab color
+        .accentColor(Color.getColor(color: .secondaryRed)) // Customize the selected tab color
     }
 }
