@@ -13,6 +13,7 @@ struct MenuSection: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text(section.sectionName ?? "")
+                .foregroundStyle(Color.getColor(color: .dark48))
                 .font(.title3)
                 .fontWeight(.semibold)
                 .padding(.horizontal, 16)

@@ -99,11 +99,12 @@ struct RestaurantMenuView: View {
                     .progressViewStyle(CircularProgressViewStyle())
             }
         }
+        .background(Color.white)
+        .navigationBarHidden(true)
+        .ignoresSafeArea(edges: .top)
         .onTapGesture {
             searchBarFocusState = nil
         }
-        .navigationBarHidden(true)
-        .ignoresSafeArea(edges: .top)
     }
     
     // MARK: - Header View
