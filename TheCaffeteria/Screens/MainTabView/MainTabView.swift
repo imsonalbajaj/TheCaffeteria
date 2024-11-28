@@ -21,8 +21,18 @@ struct MainTabView: View {
                     Image(systemName: "pencil.and.list.clipboard.rtl")
                     Text("Orders")
                 }
-
             
+            CartView()
+                .tabItem {
+                    Image(systemName: "cart")
+                    Text("Cart")
+                }
+            
+            MoreView()
+                .tabItem {
+                    Image(systemName: "ellipsis")
+                    Text("More")
+                }
         }
         .accentColor(Color.getColor(color: .secondaryRed)) // Customize the selected tab color
     }
