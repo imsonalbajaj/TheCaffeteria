@@ -13,6 +13,9 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $path) {
             VStack {
+                HStack {
+                    Spacer()
+                }
                 Text("Hello, World!")
                     .padding(16)
                     .background(Color.gray)
@@ -25,7 +28,10 @@ struct HomeView: View {
                             RestaurantMenuView()
                         }
                     }
+                
+                Spacer()
             }
+            .background(Color.white)
             .navigationTitle("Home")
         }
     }

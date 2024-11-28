@@ -15,7 +15,7 @@ struct MainTabView: View {
                     Image(systemName: "house.fill")
                     Text("Home")
                 }
-
+            
             OrdersView()
                 .tabItem {
                     Image(systemName: "pencil.and.list.clipboard.rtl")
@@ -34,6 +34,6 @@ struct MainTabView: View {
                     Text("More")
                 }
         }
-        .accentColor(Color.getColor(color: .secondaryRed)) // Customize the selected tab color
+        .accentColor(Color.getColor(color: .secondaryRed))
     }
 }

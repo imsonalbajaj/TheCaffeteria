@@ -12,39 +12,10 @@ struct MoreView: View {
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             userIcon
-                .padding(.horizontal, 32)
-            
-            Color.gray
-                .frame(height: 1)
-                .padding(.horizontal, 32)
-            
-            HStack(spacing: 4) {
-                Image(systemName: "heart.fill")
-                Text("Favourite")
-                Spacer()
-            }
-            .padding(.horizontal, 32)
-            .padding(.top, 16)
-            
-            HStack(spacing: 4) {
-                Image(systemName: "questionmark.circle")
-                Text("Favourite")
-                Spacer()
-            }
-            .padding(.horizontal, 32)
-            .padding(.top, 16)
-            
-            HStack(spacing: 4) {
-                Image(systemName: "arrow.uturn.backward.square")
-                
-                Text("Log out")
-                Spacer()
-            }
-            .padding(.horizontal, 32)
-            .padding(.top, 16)
-            
+            toolsMenu
             Spacer()
         }
+        .background(Color.white)
     }
     
     var userIcon: some View {
@@ -57,15 +28,20 @@ struct MoreView: View {
                 .clipShape(Circle())
                 .padding(.top, 16)
             
-            
             VStack(alignment: .leading, spacing: 4) {
                 Text("Sonal")
+                    .font(.title3)
+                    .fontWeight(.semibold)
+                    .foregroundColor(Color.getColor(color: .dark48))
                 Button {
                     dropdownTapped.toggle()
                 } label: {
                     HStack(spacing: 5) {
                         Image(systemName: dropdownTapped ? "arrow.up" : "arrow.down")
+                            .foregroundColor(Color.getColor(color: .secondaryRed).opacity(0.8))
+
                         Text( dropdownTapped ? "account details" : "view account details")
+                            .foregroundColor(Color.getColor(color: .secondaryRed).opacity(0.8))
                     }
                 }
                 
@@ -77,24 +53,85 @@ struct MoreView: View {
             
             Spacer()
         }
+        .padding(.horizontal, 32)
+        .padding(.bottom, 32)
+        .background(Color.getColor(color: .secondaryRed).opacity(0.3))
     }
     
     var userInfoView: some View {
-        HStack(spacing: 2) {
+        HStack(spacing: 4) {
             VStack(alignment: .leading, spacing: 0) {
                 Text("name")
-                Text("mail")
+                    .foregroundColor(Color.getColor(color: .dark96))
+                
+                Text("email")
+                    .foregroundColor(Color.getColor(color: .dark96))
+
+                Text("phone-no")
+                    .foregroundColor(Color.getColor(color: .dark96))
             }
             
             VStack(spacing: 0) {
                 Text(" : ")
+                    .foregroundColor(Color.getColor(color: .dark96))
+
                 Text(" : ")
+                    .foregroundColor(Color.getColor(color: .dark96))
+
+                Text(" : ")
+                    .foregroundColor(Color.getColor(color: .dark96))
+
             }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("sonal")
+                    .foregroundColor(Color.getColor(color: .dark48))
+                
                 Text("mail@mail.com")
+                    .foregroundColor(Color.getColor(color: .dark48))
+                
+                Text("9990001234")
+                    .foregroundColor(Color.getColor(color: .dark48))
+
             }
+        }
+        .padding(.top, 8)
+    }
+    
+    var toolsMenu: some View {
+        VStack {
+            HStack(spacing: 16) {
+                Image(systemName: "heart.fill")
+                    .foregroundColor(Color.red)
+
+                Text("Favourite")
+                    .foregroundColor(Color.getColor(color: .dark48))
+
+                Spacer()
+            }
+            .padding(.horizontal, 32)
+            .padding(.top, 24)
+            
+            HStack(spacing: 16) {
+                Image(systemName: "questionmark.circle")
+                    .foregroundColor(Color.black)
+                Text("Favourite")
+                    .foregroundColor(Color.getColor(color: .dark48))
+                Spacer()
+            }
+            .padding(.horizontal, 32)
+            .padding(.top, 16)
+            
+            HStack(spacing: 16) {
+                Image(systemName: "arrow.uturn.backward.square")
+                    .foregroundColor(Color.blue)
+                
+                Text("Log out")
+                    .foregroundColor(Color.getColor(color: .dark48))
+                Spacer()
+            }
+            .padding(.horizontal, 32)
+            .padding(.top, 16)
         }
     }
 }
