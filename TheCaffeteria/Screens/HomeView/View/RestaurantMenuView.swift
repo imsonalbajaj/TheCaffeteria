@@ -14,9 +14,12 @@ struct RestaurantMenuView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Rectangle()
+            Color.getColor(color: .secondaryRed)
                 .frame(height: TOP_INSET)
             
+            Color.getColor(color: .secondaryRed).opacity(0.6)
+                .frame(height: 1)
+
             if let menuData = viewModel.menuData {
                 headerView
                     .frame(height: 40)
