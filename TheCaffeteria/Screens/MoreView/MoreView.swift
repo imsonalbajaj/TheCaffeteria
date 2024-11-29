@@ -32,16 +32,17 @@ struct MoreView: View {
                 Text("Sonal")
                     .font(.title3)
                     .fontWeight(.semibold)
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.white)
+                
                 Button {
                     dropdownTapped.toggle()
                 } label: {
                     HStack(spacing: 5) {
                         Image(systemName: dropdownTapped ? "arrow.up" : "arrow.down")
-                            .foregroundStyle(Color.getColor(color: .secondaryRed).opacity(0.8))
+                            .foregroundStyle(Color.white)
 
                         Text( dropdownTapped ? "account details" : "view account details")
-                            .foregroundStyle(Color.getColor(color: .secondaryRed).opacity(0.8))
+                            .foregroundStyle(Color.white)
                     }
                 }
                 
@@ -55,43 +56,44 @@ struct MoreView: View {
         }
         .padding(.horizontal, 32)
         .padding(.bottom, 32)
-        .background(Color.getColor(color: .secondaryRed).opacity(0.3))
+        .background(Color.getColor(color: .primaryRed))
     }
     
     var userInfoView: some View {
         HStack(spacing: 4) {
             VStack(alignment: .leading, spacing: 0) {
                 Text("name")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.white)
                 
                 Text("email")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.white)
 
                 Text("phone-no")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.white)
             }
             
             VStack(spacing: 0) {
                 Text(" : ")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.white)
 
                 Text(" : ")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.white)
 
                 Text(" : ")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color.white)
 
             }
             
             VStack(alignment: .leading, spacing: 0) {
                 Text("sonal")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.white)
                 
                 Text("mail@mail.com")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.white)
+                    .lineLimit(1)
                 
                 Text("9990001234")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color.white)
 
             }
         }

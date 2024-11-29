@@ -14,16 +14,16 @@ struct RestaurantMenuView: View {
     
     var body: some View {
         VStack(spacing: 0) {
-            Color.getColor(color: .secondaryRed)
+            Color.getColor(color: .primaryRed)
                 .frame(height: TOP_INSET)
             
-            Color.getColor(color: .secondaryRed).opacity(0.6)
+            Color.getColor(color: .primaryRed).opacity(0.6)
                 .frame(height: 1)
 
             if let menuData = viewModel.menuData {
                 headerView
                     .frame(height: 40)
-                    .background(Color.getColor(color: .secondaryRed))
+                    .background(Color.getColor(color: .primaryRed))
                 
                 if let sectionArr = menuData.section, sectionArr.count > 0 {
                     ZStack(alignment: .top) {
@@ -152,7 +152,7 @@ struct RestaurantMenuView: View {
     private var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundStyle(Color.getColor(color: .secondaryRed))
+                .foregroundStyle(Color.getColor(color: .primaryRed))
             TextField("Find items, food categories...", text: $viewModel.searchText)
                 .foregroundStyle(.gray)
                 .disableAutocorrection(true)

@@ -37,7 +37,6 @@ enum CustomColor {
     case mbGreenSelectedBorder
     case mbGreenSelectedBackGround
     case primaryRed
-    case secondaryRed
     case foodPrimaryGreen
     case ratingYellow
 }

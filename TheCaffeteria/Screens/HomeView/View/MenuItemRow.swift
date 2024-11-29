@@ -37,7 +37,7 @@ struct MenuItemRow: View {
                 
                 Text(item.itemPrice ?? "")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(Color.getColor(color: .secondaryRed))
+                    .foregroundStyle(Color.getColor(color: .primaryRed))
             }
             
             Spacer()
@@ -103,7 +103,7 @@ struct MenuItemRow: View {
             }
         }
         .frame(width: 100,height: 40)
-        .background(Color.getColor(color: .secondaryRed).opacity(1))
+        .background(Color.getColor(color: .primaryRed).opacity(1))
         .background(Color.white)
         .cornerRadius(8)
     }

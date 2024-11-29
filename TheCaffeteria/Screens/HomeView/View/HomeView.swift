@@ -14,10 +14,10 @@ struct HomeView: View {
         NavigationStack(path: $path) {
             VStack(alignment: .leading,  spacing: 0){
                 
-                Color.getColor(color: .secondaryRed)
+                Color.getColor(color: .primaryRed)
                     .frame(height: TOP_INSET)
                 
-                Color.getColor(color: .secondaryRed).opacity(0.6)
+                Color.getColor(color: .primaryRed).opacity(0.6)
                     .frame(height: 1)
                 
                 topView
@@ -69,7 +69,7 @@ struct HomeView: View {
         .padding(.horizontal, 16)
 //        .padding(.vertical, 8)
         .frame(height: 40)
-        .background(Color.getColor(color: .secondaryRed))
+        .background(Color.getColor(color: .primaryRed))
     }
     
     var todaysOfferView: some View {
@@ -142,9 +142,9 @@ struct FoodCounterSection: View {
                 
                 HStack(spacing: 2){
                     Image(systemName: "star.fill")
-                        .foregroundStyle(Color.getColor(color: .secondaryRed))
+                        .foregroundStyle(Color.getColor(color: .primaryRed))
                     Text("4.5")
-                        .foregroundStyle(Color.getColor(color: .secondaryRed))
+                        .foregroundStyle(Color.getColor(color: .primaryRed))
                     
                     Circle()
                         .fill(Color.getColor(color: .dark144))

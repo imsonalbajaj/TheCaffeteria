@@ -35,7 +35,7 @@ struct MainTabView: View {
                         Text("More")
                     }
             }
-            .toolbarBackground(Color.getColor(color: .secondaryRed), for: .tabBar)
+            .toolbarBackground(Color.getColor(color: .primaryRed), for: .tabBar)
             .toolbarBackground(.visible, for: .tabBar)
             .toolbarColorScheme(.dark, for: .tabBar)
         }

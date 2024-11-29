@@ -30,11 +30,8 @@ extension Color {
             
         case .mbGreenSelectedBackGround:
             return Color(red: 237 / 255, green: 250 / 255, blue: 249 / 255)
-            
+                        
         case .primaryRed:
-            return Color(red: 216 / 255, green: 35 / 255, blue: 42 / 255)
-            
-        case .secondaryRed:
             return Color(red: 226 / 255, green: 76 / 255, blue: 82 / 255)
             
         case .foodPrimaryGreen:
