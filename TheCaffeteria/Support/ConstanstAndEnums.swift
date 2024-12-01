@@ -34,6 +34,7 @@ enum CustomColor {
     case dark144
     case dark151
     case dark216
+    case dark241
     case mbGreenSelectedBorder
     case mbGreenSelectedBackGround
     case primaryRed

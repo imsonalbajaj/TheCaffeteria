@@ -25,6 +25,9 @@ extension Color {
         case .dark216:
             return Color(red: 216 / 255, green: 216 / 255, blue: 216 / 255)
             
+        case .dark241:
+            return Color(red: 241 / 255, green: 241 / 255, blue: 241 / 255)
+            
         case .mbGreenSelectedBorder:
             return Color(red: 0 / 255, green: 150 / 255, blue: 129 / 255)
             

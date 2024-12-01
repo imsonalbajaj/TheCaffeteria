@@ -25,6 +25,11 @@ struct OrdersView: View {
                 }
             }
             .background(Color.white)
+            .navigationDestination(for: String.self) { destination in
+                if destination == "CurrOrderView" {
+                    CurrOrderView()
+                }
+            }
         }
         .ignoresSafeArea(.all)
     }
@@ -95,6 +100,9 @@ struct OrdersView: View {
             RoundedRectangle(cornerRadius: 8)
                 .stroke(Color.getColor(color: .dark216), lineWidth: 1)
         )
+        .onTapGesture {
+            path.append("CurrOrderView")
+        }
         .padding(8)
         .background(Color.white)
         

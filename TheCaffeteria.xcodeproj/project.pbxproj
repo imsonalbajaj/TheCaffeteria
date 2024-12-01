@@ -24,6 +24,7 @@
 		573EDE4A2C64C27B00CBCB9F /* TheCaffeteriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE492C64C27B00CBCB9F /* TheCaffeteriaTests.swift */; };
 		573EDE542C64C27B00CBCB9F /* TheCaffeteriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE532C64C27B00CBCB9F /* TheCaffeteriaUITests.swift */; };
 		573EDE562C64C27B00CBCB9F /* TheCaffeteriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE552C64C27B00CBCB9F /* TheCaffeteriaUITestsLaunchTests.swift */; };
+		5781EC412CFCE3CA00130470 /* CurrOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781EC402CFCE3CA00130470 /* CurrOrderView.swift */; };
 		579CD3C22CEE4BB300A10751 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CD3C12CEE4BB300A10751 /* MenuSection.swift */; };
 		57A9F1FB2CF790B8009C00E0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9F1FA2CF790B8009C00E0 /* MainTabView.swift */; };
 		57A9F1FE2CF79113009C00E0 /* HomeView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9F1FD2CF79113009C00E0 /* HomeView.swift */; };
@@ -72,6 +73,7 @@
 		573EDE4F2C64C27B00CBCB9F /* TheCaffeteriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheCaffeteriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		573EDE532C64C27B00CBCB9F /* TheCaffeteriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCaffeteriaUITests.swift; sourceTree = "<group>"; };
 		573EDE552C64C27B00CBCB9F /* TheCaffeteriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCaffeteriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		5781EC402CFCE3CA00130470 /* CurrOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrOrderView.swift; sourceTree = "<group>"; };
 		579CD3C12CEE4BB300A10751 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
 		57A9F1FA2CF790B8009C00E0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
 		57A9F1FD2CF79113009C00E0 /* HomeView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HomeView.swift; sourceTree = "<group>"; };
@@ -249,6 +251,7 @@
 			isa = PBXGroup;
 			children = (
 				57A9F2002CF79137009C00E0 /* OrdersView.swift */,
+				5781EC402CFCE3CA00130470 /* CurrOrderView.swift */,
 			);
 			path = OrdersView;
 			sourceTree = "<group>";
@@ -417,6 +420,7 @@
 				573EDE392C64C27900CBCB9F /* ContentView.swift in Sources */,
 				573EDE3B2C64C27900CBCB9F /* Item.swift in Sources */,
 				5734BED52CEDC2B7002A5D5B /* ConstanstAndEnums.swift in Sources */,
+				5781EC412CFCE3CA00130470 /* CurrOrderView.swift in Sources */,
 				573EDE372C64C27900CBCB9F /* TheCaffeteriaApp.swift in Sources */,
 				5734BED12CECFD13002A5D5B /* String.swift in Sources */,
 				5734BED32CEDA2E1002A5D5B /* CommonViews.swift in Sources */,
