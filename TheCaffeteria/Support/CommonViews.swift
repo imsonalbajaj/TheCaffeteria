@@ -7,6 +7,18 @@
 
 import SwiftUI
 
+struct TopSafeSection: View {
+    var body: some View {
+        VStack(spacing: 0) {
+            Color.getColor(color: .primaryRed)
+                .frame(height: TOP_INSET)
+            
+            Color.getColor(color: .primaryRed).opacity(0.6)
+                .frame(height: 1)
+        }
+    }
+}
+
 struct NetworkImageView: View {
     var imageUrl: String
     var placeHolderImg: String = "messageNoImage"

@@ -15,10 +15,8 @@ struct ContentView: View {
     @State var text: String = ""
 
     var body: some View {
-        NavigationSplitView {
+        NavigationStack {
             MainTabView()
-        } detail: {
-            Text("Select an item")
         }
     }
 }

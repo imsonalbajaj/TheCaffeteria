@@ -10,12 +10,18 @@ import SwiftUI
 struct MoreView: View {
     @State var dropdownTapped: Bool = false
     var body: some View {
-        VStack (alignment: .leading, spacing: 0) {
-            userIcon
-            toolsMenu
-            Spacer()
+        NavigationStack {
+            VStack (alignment: .leading, spacing: 0) {
+                TopSafeSection()
+                
+                userIcon
+                toolsMenu
+                Spacer()
+            }
+            .background(Color.white)
+
         }
-        .background(Color.white)
+        .ignoresSafeArea(.all)
     }
     
     var userIcon: some View {

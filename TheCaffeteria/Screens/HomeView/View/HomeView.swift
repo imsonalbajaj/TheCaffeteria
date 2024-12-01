@@ -13,12 +13,7 @@ struct HomeView: View {
     var body: some View {
         NavigationStack(path: $path) {
             VStack(alignment: .leading,  spacing: 0){
-                
-                Color.getColor(color: .primaryRed)
-                    .frame(height: TOP_INSET)
-                
-                Color.getColor(color: .primaryRed).opacity(0.6)
-                    .frame(height: 1)
+                TopSafeSection()
                 
                 topView
                                 
@@ -63,8 +58,11 @@ struct HomeView: View {
                     .foregroundStyle(Color.white)
             }
             
-            
             Spacer()
+            
+            Image(systemName: "magnifyingglass")
+                .foregroundStyle(Color.white)
+
         }
         .padding(.horizontal, 16)
 //        .padding(.vertical, 8)
