@@ -16,8 +16,12 @@ struct TopSafeSection: View {
             Color.getColor(color: .primaryRed)
                 .frame(height: 1)
             
-            Color.getColor(color: .primaryRed).opacity(0.6)
-                .frame(height: 1)
+            ZStack{
+                Color.white
+                    .frame(height: 1)
+                Color.getColor(color: .primaryRed).opacity(0.6)
+                    .frame(height: 1)
+            }
         }
     }
 }
