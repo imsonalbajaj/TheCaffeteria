@@ -11,7 +11,10 @@ struct TopSafeSection: View {
     var body: some View {
         VStack(spacing: 0) {
             Color.getColor(color: .primaryRed)
-                .frame(height: TOP_INSET)
+                .frame(height: TOP_INSET-1)
+            
+            Color.getColor(color: .primaryRed)
+                .frame(height: 1)
             
             Color.getColor(color: .primaryRed).opacity(0.6)
                 .frame(height: 1)
