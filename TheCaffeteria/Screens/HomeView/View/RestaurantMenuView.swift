@@ -156,7 +156,7 @@ struct RestaurantMenuView: View {
             Spacer()
         }
         .padding(16)
-        .background(Color(.systemGray6))
+        .background(Color.getColor(color: .dark241))
         .cornerRadius(10)
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
