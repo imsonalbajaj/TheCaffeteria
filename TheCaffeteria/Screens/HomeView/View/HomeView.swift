@@ -116,7 +116,7 @@ struct FoodCounterSection: View {
             foodCounterRow
                 .padding(.vertical, 6)
         }
-        .padding(.horizontal, 16)
+        .padding(.horizontal, 8)
     }
     
     var foodCounterRow: some View {
@@ -154,6 +154,9 @@ struct FoodCounterSection: View {
             
             Spacer()
         }
+        .padding(8)
+        .background(Color.white)
+        .clipShape(RoundedRectangle(cornerRadius: 8))
         .onTapGesture {
             path.append("RestaurantMenu") // Trigger navigation
         }
