@@ -17,7 +17,6 @@
 		5734BED52CEDC2B7002A5D5B /* ConstanstAndEnums.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BED42CEDC2B7002A5D5B /* ConstanstAndEnums.swift */; };
 		5734BED72CEDC393002A5D5B /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BED62CEDC393002A5D5B /* Extensions.swift */; };
 		573EDE372C64C27900CBCB9F /* TheCaffeteriaApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE362C64C27900CBCB9F /* TheCaffeteriaApp.swift */; };
-		573EDE392C64C27900CBCB9F /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE382C64C27900CBCB9F /* ContentView.swift */; };
 		573EDE3B2C64C27900CBCB9F /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE3A2C64C27900CBCB9F /* Item.swift */; };
 		573EDE3D2C64C27B00CBCB9F /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 573EDE3C2C64C27B00CBCB9F /* Assets.xcassets */; };
 		573EDE402C64C27B00CBCB9F /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 573EDE3F2C64C27B00CBCB9F /* Preview Assets.xcassets */; };
@@ -64,7 +63,6 @@
 		5734BED62CEDC393002A5D5B /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		573EDE332C64C27900CBCB9F /* TheCaffeteria.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = TheCaffeteria.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		573EDE362C64C27900CBCB9F /* TheCaffeteriaApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCaffeteriaApp.swift; sourceTree = "<group>"; };
-		573EDE382C64C27900CBCB9F /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		573EDE3A2C64C27900CBCB9F /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		573EDE3C2C64C27B00CBCB9F /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		573EDE3F2C64C27B00CBCB9F /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
@@ -196,7 +194,6 @@
 				5734BEC02CECC36F002A5D5B /* Screens */,
 				5734BEBB2CECBDFF002A5D5B /* Resources */,
 				573EDE362C64C27900CBCB9F /* TheCaffeteriaApp.swift */,
-				573EDE382C64C27900CBCB9F /* ContentView.swift */,
 				573EDE3A2C64C27900CBCB9F /* Item.swift */,
 				573EDE3C2C64C27B00CBCB9F /* Assets.xcassets */,
 				573EDE3E2C64C27B00CBCB9F /* Preview Content */,
@@ -417,7 +414,6 @@
 				57A9F2012CF79137009C00E0 /* OrdersView.swift in Sources */,
 				5734BEC92CECF840002A5D5B /* Utility.swift in Sources */,
 				5734BEC62CECF161002A5D5B /* MenuData.swift in Sources */,
-				573EDE392C64C27900CBCB9F /* ContentView.swift in Sources */,
 				573EDE3B2C64C27900CBCB9F /* Item.swift in Sources */,
 				5734BED52CEDC2B7002A5D5B /* ConstanstAndEnums.swift in Sources */,
 				5781EC412CFCE3CA00130470 /* CurrOrderView.swift in Sources */,
