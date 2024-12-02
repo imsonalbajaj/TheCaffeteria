@@ -7,6 +7,15 @@
 
 import SwiftUI
 
+extension String {
+    func getTruncateStr(with length:Int) -> String{
+        if self.count <= length {
+            return self
+        }
+        return self.prefix(length) + ".."
+    }
+}
+
 extension Color {
     static func getColor(color: CustomColor) -> Color {
         switch color {

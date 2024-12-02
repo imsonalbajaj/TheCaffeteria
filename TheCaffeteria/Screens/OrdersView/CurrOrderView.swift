@@ -9,6 +9,9 @@ import SwiftUI
 
 struct CurrOrderView: View {
     @Environment(\.dismiss) private var dismiss
+    let qtyFrameWidth: CGFloat = 70
+    let priceFrameWidth: CGFloat = 70
+    
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -20,7 +23,7 @@ struct CurrOrderView: View {
                     
                     orderStatusView
                     
-                    detailedBill
+                    detailedBill()
                     
                     paymentInfoView
                     
@@ -108,7 +111,8 @@ struct CurrOrderView: View {
         .padding(6)
     }
     
-    var detailedBill: some View {
+    @ViewBuilder
+    func detailedBill() -> some View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
                 Text("Detailed Bill")
@@ -169,6 +173,42 @@ struct CurrOrderView: View {
                         .lineLimit(1)
                 }
                 .padding(.vertical, 12)
+                
+                VStack(alignment: .leading, spacing: 0) {
+                    HStack(alignment: .top, spacing: 0) {
+                        Text("Item".getTruncateStr(with: 15))
+                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .lineLimit(1)
+                        
+                        Spacer()
+                        
+                        Text("Qty.".getTruncateStr(with: 15))
+                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .lineLimit(1)
+                            .padding(.horizontal, 10)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .frame(width: qtyFrameWidth)
+                        
+                        Text("Price.".getTruncateStr(with: 15))
+                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .lineLimit(1)
+                            .frame(maxWidth: .infinity, alignment: .trailing)
+                            .frame(width: priceFrameWidth)
+                    }
+                    
+                    HLine().stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
+                        .foregroundStyle(Color.getColor(color: .dark216))
+                    
+                    getItemOrdered()
+                        .padding(.vertical, 4)
+                    getItemOrdered()
+                        .padding(.vertical, 4)
+                    getItemOrdered()
+                        .padding(.vertical, 4)
+                    
+                    getTotalBill()
+                        .padding(.vertical, 10)
+                }
             }
             .padding(8)
             .background(Color.white)
@@ -245,4 +285,69 @@ struct CurrOrderView: View {
             .padding(6)
         }
     }
+    
+    @ViewBuilder
+    func getItemOrdered() -> some View {
+        HStack(alignment: .top, spacing: 0) {
+            VStack(alignment: .leading, spacing: 0){
+                Text("tea x 1".getTruncateStr(with: 15))
+                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .lineLimit(1)
+                
+                Text("Delievered")
+                    .foregroundStyle(Color.getColor(color: .mbGreenSelectedBorder))
+                    .lineLimit(1)
+                    .padding(.vertical, 2)
+                    .padding(.horizontal, 8)
+                    .background(Color.getColor(color: .mbGreenSelectedBackGround))
+                    .clipShape(RoundedRectangle(cornerRadius: 4))
+                    .padding(.vertical, 3)
+            }
+            
+            
+            Spacer()
+            
+            Text("x 1".getTruncateStr(with: 15))
+                .foregroundStyle(Color.getColor(color: .dark48))
+                .lineLimit(1)
+                .padding(.horizontal, 10)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(width: qtyFrameWidth)
+            
+            Text("$10.00".getTruncateStr(with: 15))
+                .foregroundStyle(Color.getColor(color: .dark48))
+                .lineLimit(1)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(width: priceFrameWidth)
+                .clipShape(Rectangle())
+        }
+    }
+    
+    @ViewBuilder
+    func getTotalBill() -> some View {
+        HStack(alignment: .top, spacing: 0) {
+            VStack(alignment: .leading, spacing: 0){
+                Text("Total Bill".getTruncateStr(with: 15))
+                    .foregroundStyle(Color.getColor(color: .primaryRed))
+                    .lineLimit(1)
+                
+                Text("inclusive of all taxes & charges")
+                    .foregroundStyle(Color.getColor(color: .dark144))
+                    .lineLimit(1)
+            }
+            
+            Spacer()
+                        
+            Text("$30.00".getTruncateStr(with: 15))
+                .foregroundStyle(Color.getColor(color: .dark48))
+                .lineLimit(1)
+                .frame(maxWidth: .infinity, alignment: .trailing)
+                .frame(width: priceFrameWidth * 2)
+                .clipShape(Rectangle())
+        }
+    }
+}
+
+#Preview{
+    CurrOrderView()
 }

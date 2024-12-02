@@ -77,3 +77,30 @@ struct NetworkImageView: View {
         
     }
 }
+
+struct CustomLoaderView: View {
+    @State private var isAnimating = false
+
+    var body: some View {
+        HStack(spacing: 10) {
+            ForEach(0..<3) { index in
+                Circle()
+                    .frame(width: 20, height: 20)
+                    .foregroundStyle(Color.getColor(color: .primaryRed).opacity(0.7))
+                    .scaleEffect(isAnimating ? 0.5 : 1.0)
+                    .animation(
+                        Animation.easeInOut(duration: 0.3)
+                            .repeatForever()
+                            .delay(Double(index) * 0.1),
+                        value: isAnimating
+                    )
+            }
+        }
+        .frame(maxWidth: .infinity, maxHeight: .infinity)
+        .background(Color.black.opacity(0.5))
+        .edgesIgnoringSafeArea(.all)
+        .onAppear {
+            isAnimating = true
+        }
+    }
+}
