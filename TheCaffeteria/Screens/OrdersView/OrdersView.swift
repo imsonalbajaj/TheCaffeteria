@@ -9,6 +9,7 @@ import SwiftUI
 
 struct OrdersView: View {
     @Binding var path: [String]
+    @Binding var selectedTab: Int
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -28,19 +29,25 @@ struct OrdersView: View {
     }
     
     var topView : some View {
-        HStack(spacing: 0) {
-            Spacer()
+        ZStack(alignment: .leadingFirstTextBaseline){
+            HStack(spacing: 0) {
+                Spacer()
+                    
+                    Text("Your Order History")
+                        .foregroundStyle(Color.white)
                 
-                Text("Your Order History")
-                    .foregroundStyle(Color.white)
-            
-            Spacer()
+                Spacer()
 
+            }
+            .frame(height: 40)
+            .background(Color.getColor(color: .primaryRed))
+            
+            Image(systemName: "arrow.backward").padding(.leading, 16)
+                .foregroundStyle(Color.white)
+                .onTapGesture {
+                    selectedTab = 0
+                }
         }
-        .padding(.horizontal, 16)
-//        .padding(.vertical, 8)
-        .frame(height: 40)
-        .background(Color.getColor(color: .primaryRed))
     }
     
     var currOrder: some View {

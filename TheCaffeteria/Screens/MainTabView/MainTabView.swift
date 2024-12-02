@@ -11,34 +11,39 @@ struct MainTabView: View {
     //    @Environment(\.modelContext) private var modelContext
     //    @Query private var items: [Item]
     @State private var path: [String] = []
+    @State private var selectedTab: Int = 0
     
     var body: some View {
         NavigationStack(path: $path){
-            TabView {
+            TabView(selection: $selectedTab){
                 Group {
                     HomeView(path: $path)
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Home")
                         }
+                        .tag(0)
                     
-                    OrdersView(path: $path)
+                    OrdersView(path: $path, selectedTab: $selectedTab)
                         .tabItem {
                             Image(systemName: "pencil.and.list.clipboard.rtl")
                             Text("Orders")
                         }
+                        .tag(1)
                     
                     CartView()
                         .tabItem {
                             Image(systemName: "cart")
                             Text("Cart")
                         }
+                        .tag(2)
                     
                     MoreView()
                         .tabItem {
                             Image(systemName: "ellipsis")
                             Text("More")
                         }
+                        .tag(3)
                 }
                 .toolbarBackground(Color.getColor(color: .primaryRed), for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
