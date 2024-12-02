@@ -56,7 +56,8 @@ struct MoreView: View {
                     userInfoView()
                 }
             }
-            .padding(16)
+            .padding(.horizontal, 16)
+            .padding(.top, 16)
             
             Spacer()
         }
