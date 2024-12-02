@@ -24,7 +24,7 @@ struct MainTabView: View {
                         }
                         .tag(0)
                     
-                    OrdersView(path: $path, selectedTab: $selectedTab)
+                    OrdersTabView(path: $path, selectedTab: $selectedTab)
                         .tabItem {
                             Image(systemName: "pencil.and.list.clipboard.rtl")
                             Text("Orders")
@@ -54,6 +54,8 @@ struct MainTabView: View {
                     CurrOrderView()
                 } else if destination == "RestaurantMenu" {
                     RestaurantMenuView()
+                } else if destination == "OrdersView" {
+                    OrdersView(path: $path)
                 }
             }
         }

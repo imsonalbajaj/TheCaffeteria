@@ -7,9 +7,22 @@
 
 import SwiftUI
 
-struct OrdersView: View {
+struct OrdersTabView: View {
     @Binding var path: [String]
     @Binding var selectedTab: Int
+    
+    var body: some View {
+        Color.white.frame(maxWidth: .infinity, maxHeight: .infinity)
+            .onAppear{
+                selectedTab = 0
+                path.append("OrdersView")
+            }
+    }
+}
+
+struct OrdersView: View {
+    @Environment(\.dismiss) private var dismiss
+    @Binding var path: [String]
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -45,9 +58,12 @@ struct OrdersView: View {
             Image(systemName: "arrow.backward").padding(.leading, 16)
                 .foregroundStyle(Color.white)
                 .onTapGesture {
-                    selectedTab = 0
+                    dismiss()
                 }
         }
+        .navigationBarHidden(true)
+        .ignoresSafeArea(edges: .all)
+
     }
     
     var currOrder: some View {
