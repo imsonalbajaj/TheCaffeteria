@@ -347,7 +347,3 @@ struct CurrOrderView: View {
         }
     }
 }
-
-#Preview{
-    CurrOrderView()
-}
