@@ -24,6 +24,7 @@ let BOTTOM_INSET: CGFloat = UIApplication.shared.connectedScenes
 let HEIGHT: CGFloat = UIScreen.main.bounds.height
 let WIDTH: CGFloat = UIScreen.main.bounds.width
 
+let CUSTOM_NAV_HEI = 40.0
 
 
 // MARK: enum's

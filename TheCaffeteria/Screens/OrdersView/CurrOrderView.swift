@@ -46,6 +46,7 @@ struct CurrOrderView: View {
             Group {
                 Image(systemName: "arrow.backward")
                     .padding(.trailing, 4)
+                    .foregroundStyle(Color.white)
                 Text("Order Details")
                     .foregroundStyle(Color.white)
             }
@@ -58,6 +59,7 @@ struct CurrOrderView: View {
             
             Group {
                 Image(systemName: "paperplane.fill")
+                    .foregroundStyle(Color.white)
                     .padding(.trailing, 4)
                 
                 Text("get invoice")
