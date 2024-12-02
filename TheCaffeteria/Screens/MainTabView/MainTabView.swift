@@ -10,18 +10,19 @@ import SwiftUI
 struct MainTabView: View {
     //    @Environment(\.modelContext) private var modelContext
     //    @Query private var items: [Item]
+    @State private var path: [String] = []
     
     var body: some View {
-        NavigationStack {
+        NavigationStack(path: $path){
             TabView {
                 Group {
-                    HomeView()
+                    HomeView(path: $path)
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Home")
                         }
                     
-                    OrdersView()
+                    OrdersView(path: $path)
                         .tabItem {
                             Image(systemName: "pencil.and.list.clipboard.rtl")
                             Text("Orders")
@@ -42,6 +43,13 @@ struct MainTabView: View {
                 .toolbarBackground(Color.getColor(color: .primaryRed), for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
+            }
+            .navigationDestination(for: String.self) { destination in
+                if destination == "CurrOrderView" {
+                    CurrOrderView()
+                } else if destination == "RestaurantMenu" {
+                    RestaurantMenuView()
+                }
             }
         }
     }

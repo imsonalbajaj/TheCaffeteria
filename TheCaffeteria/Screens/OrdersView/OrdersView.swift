@@ -8,32 +8,22 @@
 import SwiftUI
 
 struct OrdersView: View {
-    @State private var path: [String] = []
+    @Binding var path: [String]
+    
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack(alignment: .leading, spacing: 0){
-                TopSafeSection()
-                ScrollView {
-                    VStack(alignment: .leading, spacing: 0) {
-                        
-                        
-                        topView
-                        
-                        currOrder
-                        currOrder
-                    }
-                }
-                
-                Spacer()
-            }
-//            .background(Color.white)
-            .background(Color.getColor(color: .dark241))
-            .navigationDestination(for: String.self) { destination in
-                if destination == "CurrOrderView" {
-                    CurrOrderView()
+        VStack(alignment: .leading, spacing: 0){
+            TopSafeSection()
+            ScrollView {
+                VStack(alignment: .leading, spacing: 0) {
+                    topView
+                    currOrder
+                    currOrder
                 }
             }
+            Spacer()
         }
+        
+        .background(Color.getColor(color: .dark241))
         .ignoresSafeArea(.all)
     }
     

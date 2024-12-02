@@ -8,39 +8,32 @@
 import SwiftUI
 
 struct HomeView: View {
-    @State private var path: [String] = []
+    @Binding var path: [String]
     
     var body: some View {
-        NavigationStack(path: $path) {
-            VStack(alignment: .leading,  spacing: 0){
-                TopSafeSection()
-                
-                topView
-                                
-                ScrollViewReader { proxy in
-                    ScrollView {
-                        todaysOfferView
-                            .padding(16)
-
-                        FoodCounterSection(path: $path)
-                    }
+        VStack(alignment: .leading,  spacing: 0){
+            TopSafeSection()
+            
+            topView
+            
+            ScrollViewReader { proxy in
+                ScrollView {
+                    todaysOfferView
+                        .padding(16)
+                    
+                    FoodCounterSection(path: $path)
                 }
-                
-                HStack {
-                    Spacer()
-                }
-                
+            }
+            
+            HStack {
                 Spacer()
             }
-            .background(Color.gray.opacity(0.2))
-            .background(Color.white)
-            .navigationTitle("Home")
-            .navigationDestination(for: String.self) { destination in
-                if destination == "RestaurantMenu" {
-                    RestaurantMenuView()
-                }
-            }
+            
+            Spacer()
         }
+        .background(Color.gray.opacity(0.2))
+        .background(Color.white)
+        .navigationTitle("Home")
         .ignoresSafeArea(.all)
     }
     
