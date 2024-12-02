@@ -48,6 +48,9 @@ struct RestaurantMenuView: View {
                                     VStack(spacing: 0) {
                                         searchBar
                                             .focused($searchBarFocusState, equals: 1)
+                                            .onTapGesture {
+                                                searchBarFocusState = 1
+                                            }
                                         categoryPills
                                     }
                                     
@@ -73,6 +76,9 @@ struct RestaurantMenuView: View {
                             VStack(spacing: 0) {
                                 searchBar
                                     .focused($searchBarFocusState, equals: 2)
+                                    .onTapGesture {
+                                        searchBarFocusState = 2
+                                    }
                                 categoryPills
                             }
                             .onAppear{
@@ -149,10 +155,19 @@ struct RestaurantMenuView: View {
         HStack {
             Image(systemName: "magnifyingglass")
                 .foregroundStyle(Color.getColor(color: .primaryRed))
-            TextField("Find items, food categories...", text: $viewModel.searchText)
-                .foregroundStyle(.gray)
-                .disableAutocorrection(true)
-                .keyboardType(.namePhonePad)
+            ZStack {
+                TextField("", text: $viewModel.searchText)
+                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .disableAutocorrection(true)
+                    .keyboardType(.namePhonePad)
+                
+                if viewModel.searchText.count < 1 {
+                    Text("Find items, food categories...")
+                        .foregroundStyle(Color.getColor(color: .dark96))
+                        .frame(maxWidth: .infinity, alignment: .leading)
+                }
+
+            }
             Spacer()
         }
         .padding(16)

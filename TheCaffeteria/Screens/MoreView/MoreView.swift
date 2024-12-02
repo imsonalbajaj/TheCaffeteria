@@ -66,7 +66,7 @@ struct MoreView: View {
     }
     
     @ViewBuilder
-    func userInfoView() -> some View {        
+    func userInfoView() -> some View {
         VStack(alignment: .leading, spacing: 4) {
             detailsView(txt1: "name", txt2: "sonal")
             detailsView(txt1: "email", txt2: "sonal@mail.com")
