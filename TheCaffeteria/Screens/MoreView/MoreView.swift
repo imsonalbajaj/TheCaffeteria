@@ -9,11 +9,13 @@ import SwiftUI
 
 struct MoreView: View {
     @State var dropdownTapped: Bool = false
+    let widthForDetails: CGFloat = 70
+
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             TopSafeSection()
             
-            userIcon
+            userIcon()
             toolsMenu
             Spacer()
         }
@@ -21,7 +23,8 @@ struct MoreView: View {
         .ignoresSafeArea(.all)
     }
     
-    var userIcon: some View {
+    @ViewBuilder
+    func userIcon() -> some View {
         HStack(alignment: .top, spacing: 0) {
             Image(systemName: "person.fill")
                 .scaledToFill()
@@ -50,7 +53,7 @@ struct MoreView: View {
                 }
                 
                 if dropdownTapped {
-                    userInfoView
+                    userInfoView()
                 }
             }
             .padding(16)
@@ -62,43 +65,12 @@ struct MoreView: View {
         .background(Color.getColor(color: .primaryRed))
     }
     
-    var userInfoView: some View {
-        HStack(spacing: 4) {
-            VStack(alignment: .leading, spacing: 0) {
-                Text("name")
-                    .foregroundStyle(Color.white)
-                
-                Text("email")
-                    .foregroundStyle(Color.white)
-
-                Text("phone-no")
-                    .foregroundStyle(Color.white)
-            }
-            
-            VStack(spacing: 0) {
-                Text(" : ")
-                    .foregroundStyle(Color.white)
-
-                Text(" : ")
-                    .foregroundStyle(Color.white)
-
-                Text(" : ")
-                    .foregroundStyle(Color.white)
-
-            }
-            
-            VStack(alignment: .leading, spacing: 0) {
-                Text("sonal")
-                    .foregroundStyle(Color.white)
-                
-                Text("mail@mail.com")
-                    .foregroundStyle(Color.white)
-                    .lineLimit(1)
-                
-                Text("9990001234")
-                    .foregroundStyle(Color.white)
-
-            }
+    @ViewBuilder
+    func userInfoView() -> some View {        
+        VStack(alignment: .leading, spacing: 4) {
+            detailsView(txt1: "name", txt2: "sonal")
+            detailsView(txt1: "email", txt2: "sonal@mail.com")
+            detailsView(txt1: "number", txt2: "9899789899")
         }
         .padding(.top, 8)
     }
@@ -137,6 +109,28 @@ struct MoreView: View {
             }
             .padding(.horizontal, 32)
             .padding(.top, 16)
+        }
+    }
+    
+    @ViewBuilder
+    func detailsView(txt1: String, txt2: String) -> some View {
+        HStack(spacing: 0) {
+            Text(txt1.getTruncateStr(with: 15))
+                .foregroundStyle(Color.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+                .frame(width: widthForDetails)
+            
+            Text(":")
+                .foregroundStyle(Color.white)
+                .lineLimit(1)
+                .padding(.horizontal, 4)
+            
+            Spacer()
+            
+            Text(txt2.getTruncateStr(with: 15))
+                .foregroundStyle(Color.white)
+                .frame(maxWidth: .infinity, alignment: .leading)
+
         }
     }
 }
