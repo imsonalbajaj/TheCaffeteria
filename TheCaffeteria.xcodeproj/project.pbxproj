@@ -32,6 +32,9 @@
 		57A9F2082CF84C3B009C00E0 /* CartView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9F2072CF84C3B009C00E0 /* CartView.swift */; };
 		57BB89662CF5A72100FC0749 /* MenuItemRow.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB89652CF5A72100FC0749 /* MenuItemRow.swift */; };
 		57BB89682CF5A76C00FC0749 /* CategoryPill.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57BB89672CF5A76C00FC0749 /* CategoryPill.swift */; };
+		57EDD7482CFEED59004CBD9A /* OrdersTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EDD7472CFEED59004CBD9A /* OrdersTabView.swift */; };
+		57EDD74A2CFEED98004CBD9A /* CartTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EDD7492CFEED98004CBD9A /* CartTabView.swift */; };
+		57EDD74C2CFF1CC4004CBD9A /* MoreTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57EDD74B2CFF1CC4004CBD9A /* MoreTabView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -80,6 +83,9 @@
 		57A9F2072CF84C3B009C00E0 /* CartView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartView.swift; sourceTree = "<group>"; };
 		57BB89652CF5A72100FC0749 /* MenuItemRow.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuItemRow.swift; sourceTree = "<group>"; };
 		57BB89672CF5A76C00FC0749 /* CategoryPill.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CategoryPill.swift; sourceTree = "<group>"; };
+		57EDD7472CFEED59004CBD9A /* OrdersTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OrdersTabView.swift; sourceTree = "<group>"; };
+		57EDD7492CFEED98004CBD9A /* CartTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CartTabView.swift; sourceTree = "<group>"; };
+		57EDD74B2CFF1CC4004CBD9A /* MoreTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MoreTabView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -229,7 +235,7 @@
 		57A9F1F92CF79097009C00E0 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
-				57A9F1FA2CF790B8009C00E0 /* MainTabView.swift */,
+				57EDD7462CFEED26004CBD9A /* Views */,
 			);
 			path = MainTabView;
 			sourceTree = "<group>";
@@ -275,6 +281,17 @@
 				57A9F2072CF84C3B009C00E0 /* CartView.swift */,
 			);
 			path = CartView;
+			sourceTree = "<group>";
+		};
+		57EDD7462CFEED26004CBD9A /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				57A9F1FA2CF790B8009C00E0 /* MainTabView.swift */,
+				57EDD7472CFEED59004CBD9A /* OrdersTabView.swift */,
+				57EDD7492CFEED98004CBD9A /* CartTabView.swift */,
+				57EDD74B2CFF1CC4004CBD9A /* MoreTabView.swift */,
+			);
+			path = Views;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -411,10 +428,12 @@
 				57BB89682CF5A76C00FC0749 /* CategoryPill.swift in Sources */,
 				57A9F2052CF84B11009C00E0 /* MoreView.swift in Sources */,
 				5734BECD2CECFA61002A5D5B /* RestaurantMenuViewModel.swift in Sources */,
+				57EDD74C2CFF1CC4004CBD9A /* MoreTabView.swift in Sources */,
 				57A9F2012CF79137009C00E0 /* OrdersView.swift in Sources */,
 				5734BEC92CECF840002A5D5B /* Utility.swift in Sources */,
 				5734BEC62CECF161002A5D5B /* MenuData.swift in Sources */,
 				573EDE3B2C64C27900CBCB9F /* Item.swift in Sources */,
+				57EDD7482CFEED59004CBD9A /* OrdersTabView.swift in Sources */,
 				5734BED52CEDC2B7002A5D5B /* ConstanstAndEnums.swift in Sources */,
 				5781EC412CFCE3CA00130470 /* CurrOrderView.swift in Sources */,
 				573EDE372C64C27900CBCB9F /* TheCaffeteriaApp.swift in Sources */,
@@ -425,6 +444,7 @@
 				579CD3C22CEE4BB300A10751 /* MenuSection.swift in Sources */,
 				57A9F1FE2CF79113009C00E0 /* HomeView.swift in Sources */,
 				5734BECF2CECFA8F002A5D5B /* RestaurantMenuView.swift in Sources */,
+				57EDD74A2CFEED98004CBD9A /* CartTabView.swift in Sources */,
 				57A9F2082CF84C3B009C00E0 /* CartView.swift in Sources */,
 				57A9F1FB2CF790B8009C00E0 /* MainTabView.swift in Sources */,
 			);

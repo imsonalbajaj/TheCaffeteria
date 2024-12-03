@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct OrdersTabView: View {
-    @Binding var path: [String]
-    @Binding var selectedTab: Int
-    
-    var body: some View {
-        Color.white.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onAppear{
-                selectedTab = 0
-                path.append("OrdersView")
-            }
-    }
-}
-
 struct OrdersView: View {
     @Environment(\.dismiss) private var dismiss
     @Binding var path: [String]

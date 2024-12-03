@@ -8,6 +8,7 @@
 import SwiftUI
 
 struct MoreView: View {
+    @Environment(\.dismiss) private var dismiss
     @State var dropdownTapped: Bool = false
     let widthForDetails: CGFloat = 70
 
@@ -15,12 +16,38 @@ struct MoreView: View {
         VStack (alignment: .leading, spacing: 0) {
             TopSafeSection()
             
+            topView
             userIcon()
             toolsMenu
             Spacer()
         }
         .background(Color.white)
         .ignoresSafeArea(.all)
+    }
+    
+    var topView : some View {
+        ZStack(alignment: .leadingFirstTextBaseline){
+            HStack(spacing: 0) {
+                Spacer()
+                
+                Text("Your Profile Section")
+                    .foregroundStyle(Color.white)
+                
+                Spacer()
+                
+            }
+            .frame(height: 40)
+            .background(Color.getColor(color: .primaryRed))
+            
+            Image(systemName: "arrow.backward").padding(.leading, 16)
+                .foregroundStyle(Color.white)
+                .onTapGesture {
+                    dismiss()
+                }
+        }
+        .navigationBarHidden(true)
+        .ignoresSafeArea(edges: .all)
+        
     }
     
     @ViewBuilder
