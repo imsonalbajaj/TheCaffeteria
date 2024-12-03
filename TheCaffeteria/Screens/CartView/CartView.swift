@@ -65,6 +65,9 @@ struct CartView: View {
                             )
                             .padding(12)
                     
+                    additionalItems
+                        .padding(12)
+                    
                     Spacer()
                 }
             }
@@ -155,6 +158,55 @@ struct CartView: View {
             .padding(.vertical, 10)
             .background(Color.getColor(color: .dark241))
             .clipShape(RoundedRectangle(cornerRadius: 4))
+    }
+    
+    private var additionalItems: some View {
+        VStack(alignment: .leading, spacing: 0) {
+            Text("Complete your meal with: ")
+                .foregroundStyle(Color.getColor(color: .dark48))
+                .lineLimit(1)
+                .padding(.vertical, 12)
+            
+            ScrollView {
+                HStack(alignment: .center, spacing: 12) {
+                    ZStack(alignment: .topTrailing){
+                        VStack(alignment: .leading, spacing: 0) {
+                            Text("sonal")
+                                .lineLimit(2)
+                                .foregroundStyle(Color.getColor(color: .dark96))
+                                .frame(maxWidth: .infinity, alignment: .leading)
+                                .padding(8)
+                            
+                            Spacer()
+                            
+                            HStack(alignment: .center, spacing: 12) {
+                                Text("$20.00")
+                                    .foregroundStyle(Color.getColor(color: .dark48))
+                                    .frame(maxWidth: .infinity, alignment: .leading)
+                                    
+                                Image(systemName: "plus.square.fill")
+                                    .foregroundStyle(Color.getColor(color: .mbGreenSelectedBorder))
+                            }
+                            .padding(8)
+                        }
+                        .background(Color.getColor(color: .mbGreenSelectedBackGround))
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.getColor(color: .mbGreenSelectedBorder), lineWidth: 0.5)
+                        )
+                        
+                        Image(systemName: "circle.square.fill")
+                            .foregroundStyle(Color.getColor(color: .foodPrimaryGreen))
+                            .frame(width: 12, height: 12)
+                            .padding(.trailing, 2)
+                            .padding(.top, 2)
+
+                    }
+                    .frame(width: 150, height: 100)
+                }
+            }
+        }
     }
     
     @ViewBuilder
