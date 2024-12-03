@@ -22,6 +22,7 @@ struct CartTabView: View {
 
 struct CartView: View {
     @Environment(\.dismiss) private var dismiss
+    @State var instructionTxt: String = ""
     
     var body: some View {
         VStack(alignment: .leading, spacing: 0){
@@ -53,6 +54,16 @@ struct CartView: View {
                                 .stroke(Color.getColor(color: .dark216), lineWidth: 0.5)
                         )
                         .padding(12)
+                    
+                    instructionView
+                        .padding(10)
+                            .background(Color.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 8))
+                            .overlay(
+                                RoundedRectangle(cornerRadius: 8)
+                                    .stroke(Color.getColor(color: .dark216), lineWidth: 0.5)
+                            )
+                            .padding(12)
                     
                     Spacer()
                 }
@@ -133,6 +144,17 @@ struct CartView: View {
         .background(Color.getColor(color: .primaryRed).opacity(1))
         .background(Color.white)
         .cornerRadius(8)
+    }
+    
+    private var instructionView: some View {
+        TextField("Add instructions", text: $instructionTxt)
+            .disableAutocorrection(true)
+            .keyboardType(.namePhonePad)
+            .foregroundStyle(Color.getColor(color: .dark48))
+            .padding(10)
+            .padding(.vertical, 10)
+            .background(Color.getColor(color: .dark241))
+            .clipShape(RoundedRectangle(cornerRadius: 4))
     }
     
     @ViewBuilder
