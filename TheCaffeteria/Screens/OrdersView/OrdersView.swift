@@ -35,6 +35,8 @@ struct OrdersView: View {
                 }
             }
             Spacer()
+            
+            BottomSafeSection()
         }
         
         .background(Color.getColor(color: .dark241))
