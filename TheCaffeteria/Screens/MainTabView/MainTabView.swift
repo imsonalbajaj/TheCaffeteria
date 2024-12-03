@@ -31,7 +31,7 @@ struct MainTabView: View {
                         }
                         .tag(1)
                     
-                    CartView()
+                    CartTabView(path: $path, selectedTab: $selectedTab)
                         .tabItem {
                             Image(systemName: "cart")
                             Text("Cart")
@@ -56,6 +56,8 @@ struct MainTabView: View {
                     RestaurantMenuView()
                 } else if destination == "OrdersView" {
                     OrdersView(path: $path)
+                } else if destination == "CartView" {
+                    CartView()
                 }
             }
         }
