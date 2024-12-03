@@ -29,8 +29,32 @@ struct CartView: View {
             ScrollView {
                 VStack(alignment: .leading, spacing: 0) {
                     topView
-                    Text("c a  r   t")
-                        .foregroundStyle(Color.black)
+                    HStack(spacing: 10) {
+                        Image(systemName: "house.fill")
+                            .foregroundStyle(Color.getColor(color: .primaryRed))
+                        
+                        Text("The Samosa's")
+                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .lineLimit(1)
+                        
+                        Spacer()
+                    }
+                    .padding(12)
+                    
+                    VStack(alignment: .leading, spacing: 8) {
+                        itemView()
+                        
+                        itemView()
+                    }.padding(10)
+                        .background(Color.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 8))
+                        .overlay(
+                            RoundedRectangle(cornerRadius: 8)
+                                .stroke(Color.getColor(color: .dark216), lineWidth: 0.5)
+                        )
+                        .padding(12)
+                    
+                    Spacer()
                 }
             }
             Spacer()
@@ -46,12 +70,12 @@ struct CartView: View {
         ZStack(alignment: .leadingFirstTextBaseline){
             HStack(spacing: 0) {
                 Spacer()
-                    
-                    Text("Your Order History")
-                        .foregroundStyle(Color.white)
+                
+                Text("Your Order History")
+                    .foregroundStyle(Color.white)
                 
                 Spacer()
-
+                
             }
             .frame(height: 40)
             .background(Color.getColor(color: .primaryRed))
@@ -64,7 +88,71 @@ struct CartView: View {
         }
         .navigationBarHidden(true)
         .ignoresSafeArea(edges: .all)
-
+        
+    }
+    
+    private var addBtn: some View {
+        ZStack {
+            HStack(spacing: 6){
+                Text("-")
+                    .fontWeight(.medium)
+                    .foregroundStyle(Color.white)
+                    .onTapGesture {
+                    }
+                
+                Text("ADD")
+                    .fontWeight(.medium)
+                    .foregroundStyle(Color.white)
+                
+                Text("+")
+                    .fontWeight(.medium)
+                    .foregroundStyle(Color.white)
+                    .onTapGesture {
+                    }
+            }
+            .padding(.horizontal, 16)
+            .padding(.vertical, 8)
+            
+            HStack(spacing: 0) {
+                Color.clear
+                    .frame(width: 35)
+                    .onTapGesture {
+                        print("- on ")
+                    }
+                
+                Spacer()
+                
+                Color.clear
+                    .frame(width: 35)
+                    .onTapGesture {
+                        print("+ on ")
+                    }
+            }
+        }
+        .frame(width: 100,height: 40)
+        .background(Color.getColor(color: .primaryRed).opacity(1))
+        .background(Color.white)
+        .cornerRadius(8)
+    }
+    
+    @ViewBuilder
+    func itemView() -> some View {
+        HStack(spacing: 6) {
+            Image(systemName: "circle.square.fill")
+                .foregroundStyle(Color.getColor(color: .primaryRed))
+            
+            Text("Water ")
+                .foregroundStyle(Color.getColor(color: .dark48))
+                .lineLimit(1)
+            
+            Spacer()
+            
+            Text("$20.00")
+                .foregroundStyle(Color.getColor(color: .dark48))
+                .lineLimit(1)
+            
+            addBtn
+        }
     }
 }
 
