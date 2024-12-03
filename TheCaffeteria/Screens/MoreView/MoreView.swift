@@ -15,14 +15,19 @@ struct MoreView: View {
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
             TopSafeSection()
-            
             topView
+            
+            Color.getColor(color: .primaryRed).opacity(0.5)
+                .frame(height: 0.3)
+
             userIcon()
             toolsMenu
             Spacer()
         }
-        .background(Color.white)
+        .background(Color.getColor(color: .dark241))
+        .navigationBarHidden(true)
         .ignoresSafeArea(.all)
+//        .ignoresSafeArea(edges: .all)
     }
     
     var topView : some View {
@@ -36,8 +41,6 @@ struct MoreView: View {
                 Spacer()
                 
             }
-            .frame(height: 40)
-            .background(Color.getColor(color: .primaryRed))
             
             Image(systemName: "arrow.backward").padding(.leading, 16)
                 .foregroundStyle(Color.white)
@@ -45,9 +48,8 @@ struct MoreView: View {
                     dismiss()
                 }
         }
-        .navigationBarHidden(true)
-        .ignoresSafeArea(edges: .all)
-        
+        .frame(height: 40)
+        .background(Color.getColor(color: .primaryRed))
     }
     
     @ViewBuilder

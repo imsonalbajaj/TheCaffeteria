@@ -7,19 +7,6 @@
 
 import SwiftUI
 
-struct CartTabView: View {
-    @Binding var path: [String]
-    @Binding var selectedTab: Int
-    
-    var body: some View {
-        Color.white.frame(maxWidth: .infinity, maxHeight: .infinity)
-            .onAppear{
-                selectedTab = 0
-                path.append("CartView")
-            }
-    }
-}
-
 struct CartView: View {
     @Environment(\.dismiss) private var dismiss
     @State var instructionTxt: String = ""
@@ -85,7 +72,7 @@ struct CartView: View {
             HStack(spacing: 0) {
                 Spacer()
                 
-                Text("Your Order History")
+                Text("Your Cart")
                     .foregroundStyle(Color.white)
                 
                 Spacer()
@@ -228,8 +215,4 @@ struct CartView: View {
             addBtn
         }
     }
-}
-
-#Preview {
-    CartView()
 }
