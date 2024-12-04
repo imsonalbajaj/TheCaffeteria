@@ -23,6 +23,7 @@
 		573EDE4A2C64C27B00CBCB9F /* TheCaffeteriaTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE492C64C27B00CBCB9F /* TheCaffeteriaTests.swift */; };
 		573EDE542C64C27B00CBCB9F /* TheCaffeteriaUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE532C64C27B00CBCB9F /* TheCaffeteriaUITests.swift */; };
 		573EDE562C64C27B00CBCB9F /* TheCaffeteriaUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 573EDE552C64C27B00CBCB9F /* TheCaffeteriaUITestsLaunchTests.swift */; };
+		57554DD12D00399C00F9EE21 /* MainTabViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57554DD02D00399C00F9EE21 /* MainTabViewModel.swift */; };
 		5781EC412CFCE3CA00130470 /* CurrOrderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5781EC402CFCE3CA00130470 /* CurrOrderView.swift */; };
 		579CD3C22CEE4BB300A10751 /* MenuSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 579CD3C12CEE4BB300A10751 /* MenuSection.swift */; };
 		57A9F1FB2CF790B8009C00E0 /* MainTabView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 57A9F1FA2CF790B8009C00E0 /* MainTabView.swift */; };
@@ -74,6 +75,7 @@
 		573EDE4F2C64C27B00CBCB9F /* TheCaffeteriaUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = TheCaffeteriaUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		573EDE532C64C27B00CBCB9F /* TheCaffeteriaUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCaffeteriaUITests.swift; sourceTree = "<group>"; };
 		573EDE552C64C27B00CBCB9F /* TheCaffeteriaUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TheCaffeteriaUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		57554DD02D00399C00F9EE21 /* MainTabViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabViewModel.swift; sourceTree = "<group>"; };
 		5781EC402CFCE3CA00130470 /* CurrOrderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CurrOrderView.swift; sourceTree = "<group>"; };
 		579CD3C12CEE4BB300A10751 /* MenuSection.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuSection.swift; sourceTree = "<group>"; };
 		57A9F1FA2CF790B8009C00E0 /* MainTabView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainTabView.swift; sourceTree = "<group>"; };
@@ -232,9 +234,18 @@
 			path = TheCaffeteriaUITests;
 			sourceTree = "<group>";
 		};
+		57554DCF2D00397F00F9EE21 /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				57554DD02D00399C00F9EE21 /* MainTabViewModel.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
 		57A9F1F92CF79097009C00E0 /* MainTabView */ = {
 			isa = PBXGroup;
 			children = (
+				57554DCF2D00397F00F9EE21 /* ViewModel */,
 				57EDD7462CFEED26004CBD9A /* Views */,
 			);
 			path = MainTabView;
@@ -442,6 +453,7 @@
 				5734BED72CEDC393002A5D5B /* Extensions.swift in Sources */,
 				57BB89662CF5A72100FC0749 /* MenuItemRow.swift in Sources */,
 				579CD3C22CEE4BB300A10751 /* MenuSection.swift in Sources */,
+				57554DD12D00399C00F9EE21 /* MainTabViewModel.swift in Sources */,
 				57A9F1FE2CF79113009C00E0 /* HomeView.swift in Sources */,
 				5734BECF2CECFA8F002A5D5B /* RestaurantMenuView.swift in Sources */,
 				57EDD74A2CFEED98004CBD9A /* CartTabView.swift in Sources */,
