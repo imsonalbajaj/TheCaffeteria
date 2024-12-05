@@ -118,6 +118,7 @@
 		5734BEBB2CECBDFF002A5D5B /* Resources */ = {
 			isa = PBXGroup;
 			children = (
+				573EDE3C2C64C27B00CBCB9F /* Assets.xcassets */,
 				5734BEBC2CECBE0E002A5D5B /* json */,
 			);
 			path = Resources;
@@ -203,7 +204,6 @@
 				5734BEBB2CECBDFF002A5D5B /* Resources */,
 				573EDE362C64C27900CBCB9F /* TheCaffeteriaApp.swift */,
 				573EDE3A2C64C27900CBCB9F /* Item.swift */,
-				573EDE3C2C64C27B00CBCB9F /* Assets.xcassets */,
 				573EDE3E2C64C27B00CBCB9F /* Preview Content */,
 			);
 			path = TheCaffeteria;

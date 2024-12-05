@@ -31,8 +31,8 @@ struct HomeView: View {
             
             Spacer()
         }
-        .background(Color.gray.opacity(0.2))
-        .background(Color.white)
+//        .background(Color.gray.opacity(0.2))
+//        .background(Color.black)
         .navigationTitle("Home")
         .ignoresSafeArea(.all)
     }
@@ -78,6 +78,8 @@ struct HomeView: View {
             .frame(width: 300, height: 300)
             .background(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: 16))
+            .shadow(color: Color.getColor(color: .dark48), radius: 10)
+
             
             
             HStack(spacing: 0) {

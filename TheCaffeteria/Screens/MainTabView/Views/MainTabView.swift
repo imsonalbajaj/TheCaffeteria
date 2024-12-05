@@ -10,10 +10,14 @@ import SwiftUI
 struct MainTabView: View {
     //    @Environment(\.modelContext) private var modelContext
     //    @Query private var items: [Item]
+    
+    @StateObject private var viewModel = MainTabViewModel(loaderState: .loading)
     @State private var path: [String] = []
     @State private var selectedTab: Int = 0
     
     var body: some View {
+        
+        
         NavigationStack(path: $path){
             TabView(selection: $selectedTab){
                 Group {
@@ -45,7 +49,7 @@ struct MainTabView: View {
                         }
                         .tag(3)
                 }
-                .toolbarBackground(Color.getColor(color: .primaryRed), for: .tabBar)
+                .toolbarBackground(Color(color_primary_red), for: .tabBar)
                 .toolbarBackground(.visible, for: .tabBar)
                 .toolbarColorScheme(.dark, for: .tabBar)
             }
