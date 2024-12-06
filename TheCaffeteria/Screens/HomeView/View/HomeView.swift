@@ -78,7 +78,7 @@ struct HomeView: View {
             .frame(width: 300, height: 300)
             .background(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: 16))
-            .shadow(color: Color.getColor(color: .dark48), radius: 10)
+            .shadow(color: Color(color_dark48), radius: 10)
 
             
             
@@ -131,7 +131,7 @@ struct FoodCounterSection: View {
             
             VStack(alignment: .leading,spacing: 4) {
                 Text("Explore food counters")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                 
                 HStack(spacing: 2){
                     Image(systemName: "star.fill")
@@ -148,7 +148,7 @@ struct FoodCounterSection: View {
                 }
                 
                 Text("no pending orders")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
 
                 
                 Spacer()

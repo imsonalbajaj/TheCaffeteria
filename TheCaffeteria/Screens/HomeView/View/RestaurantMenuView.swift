@@ -157,7 +157,7 @@ struct RestaurantMenuView: View {
                 .foregroundStyle(Color.getColor(color: .primaryRed))
             ZStack {
                 TextField("", text: $viewModel.searchText)
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                     .disableAutocorrection(true)
                     .keyboardType(.namePhonePad)
                 
