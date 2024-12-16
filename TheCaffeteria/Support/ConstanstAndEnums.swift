@@ -55,3 +55,9 @@ enum CustomColor {
     case foodPrimaryGreen
     case ratingYellow
 }
+
+enum ApiRespState {
+    case loading
+    case success(Codable)
+    case failure(ErrorTypes)
+}
