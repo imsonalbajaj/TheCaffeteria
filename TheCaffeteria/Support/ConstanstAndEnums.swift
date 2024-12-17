@@ -40,6 +40,21 @@ let WIDTH: CGFloat = UIScreen.main.bounds.width
 let CUSTOM_NAV_HEI = 40.0
 
 
+struct HomeViewIcon: Identifiable {
+    let id = UUID()
+    let img: String
+    let txt: String
+    let destinationView: String?
+}
+
+let homeViewIcons: [HomeViewIcon] = [
+    HomeViewIcon(img: "house.fill", txt: "Home", destinationView: nil),
+    HomeViewIcon(img: "pencil.and.list.clipboard.rtl", txt: "Orders", destinationView: "OrdersView"),
+    HomeViewIcon(img: "cart", txt: "Cart", destinationView: "CartView"),
+    HomeViewIcon(img: "ellipsis", txt: "More", destinationView: "MoreView")
+]
+
+
 // MARK: enum's
 
 enum CustomColor {

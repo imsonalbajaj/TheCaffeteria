@@ -15,7 +15,7 @@ struct SplashView: View {
         case .loading:
             CustomLoaderView()
         case .success(_):
-            MainTabView()
+            HomeView()
         case .failure(_):
 //            
             ZStack {

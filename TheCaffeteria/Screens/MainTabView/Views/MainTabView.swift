@@ -21,7 +21,8 @@ struct MainTabView: View {
         NavigationStack(path: $path){
             TabView(selection: $selectedTab){
                 Group {
-                    HomeView(path: $path)
+                    //                    HomeView(path: $path)
+                    HomeView()
                         .tabItem {
                             Image(systemName: "house.fill")
                             Text("Home")

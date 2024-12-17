@@ -8,33 +8,50 @@
 import SwiftUI
 
 struct HomeView: View {
-    @Binding var path: [String]
+    @State private var path: [String] = []
     
     var body: some View {
-        VStack(alignment: .leading,  spacing: 0){
-            TopSafeSection()
-            
-            topView
-            
-            ScrollViewReader { proxy in
-                ScrollView {
-                    todaysOfferView
-                        .padding(16)
-                    
-                    FoodCounterSection(path: $path)
+        NavigationStack(path: $path) {
+            VStack(alignment: .leading,  spacing: 0){
+                TopSafeSection()
+                
+                topView
+                
+                ScrollViewReader { proxy in
+                    ScrollView {
+                        todaysOfferView
+                            .padding(16)
+                        
+                        FoodCounterSection(path: $path)
+                    }
+                }
+                
+                HStack {
+                    Spacer()
+                }
+                
+                Spacer()
+                
+                homeBottomSection
+                BottomSafeSection()
+            }
+            //        .background(Color.gray.opacity(0.2))
+            //        .background(Color.black)
+            .ignoresSafeArea(.all)
+            .navigationDestination(for: String.self) { destination in
+                if destination == "CurrOrderView" {
+                    CurrOrderView()
+                } else if destination == "RestaurantMenu" {
+                    RestaurantMenuView()
+                } else if destination == "OrdersView" {
+                    OrdersView(path: $path)
+                } else if destination == "CartView" {
+                    CartView()
+                } else if destination == "MoreView" {
+                    MoreView()
                 }
             }
-            
-            HStack {
-                Spacer()
-            }
-            
-            Spacer()
         }
-//        .background(Color.gray.opacity(0.2))
-//        .background(Color.black)
-        .navigationTitle("Home")
-        .ignoresSafeArea(.all)
     }
     
     var topView : some View {
@@ -93,6 +110,38 @@ struct HomeView: View {
                     .foregroundStyle(.white)
             }.padding(12)
         }
+    }
+    var homeBottomSection: some View {
+        HStack(alignment: .center, spacing: 0){
+            Spacer()
+                .frame(width: 16)
+            ForEach(homeViewIcons) { homeViewIcon in
+                getTabIcon(img: homeViewIcon.img, txt: homeViewIcon.txt)
+                    .frame(maxWidth: .infinity)
+                    .onTapGesture {
+                        if let destinationView = homeViewIcon.destinationView {
+                            path.append(destinationView)
+                        }
+                    }
+            }
+            Spacer()
+                .frame(width: 16)
+        }
+        .padding(.top, 8)
+        .background(Color(color_primary_red))
+    }
+    
+    @ViewBuilder
+    func getTabIcon(img: String, txt: String) -> some View {
+        VStack(alignment: .center, spacing: 0) {
+            Image(systemName: img)
+                .scaledToFit()
+                .frame(width: 12, height: 12)
+                .padding(.bottom, 4)
+            Text(txt)
+                .font(.system(size: 14, weight: .medium))
+        }
+        .foregroundStyle(Color.white)
     }
 }
 
@@ -163,4 +212,9 @@ struct FoodCounterSection: View {
             path.append("RestaurantMenu") // Trigger navigation
         }
     }
+}
+
+
+#Preview {
+    HomeView()
 }
