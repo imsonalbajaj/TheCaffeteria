@@ -19,10 +19,10 @@ struct CartView: View {
                     topView
                     HStack(spacing: 10) {
                         Image(systemName: "house.fill")
-                            .foregroundStyle(Color.getColor(color: .primaryRed))
+                            .foregroundStyle(Color(color_primary_red))
                         
                         Text("The Samosa's")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                         
                         Spacer()
@@ -38,7 +38,7 @@ struct CartView: View {
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.getColor(color: .dark216), lineWidth: 0.5)
+                                .stroke(Color(color_dark216), lineWidth: 0.5)
                         )
                         .padding(12)
                     
@@ -48,7 +48,7 @@ struct CartView: View {
                             .clipShape(RoundedRectangle(cornerRadius: 8))
                             .overlay(
                                 RoundedRectangle(cornerRadius: 8)
-                                    .stroke(Color.getColor(color: .dark216), lineWidth: 0.5)
+                                    .stroke(Color(color_dark216), lineWidth: 0.5)
                             )
                             .padding(12)
                     
@@ -63,7 +63,7 @@ struct CartView: View {
             BottomSafeSection()
         }
         
-        .background(Color.getColor(color: .dark241))
+        .background(Color(color_dark241))
         .ignoresSafeArea(.all)
     }
     
@@ -79,7 +79,7 @@ struct CartView: View {
                 
             }
             .frame(height: 40)
-            .background(Color.getColor(color: .primaryRed))
+            .background(Color(color_primary_red))
             
             Image(systemName: "arrow.backward").padding(.leading, 16)
                 .foregroundStyle(Color.white)
@@ -131,7 +131,7 @@ struct CartView: View {
             }
         }
         .frame(width: 100,height: 40)
-        .background(Color.getColor(color: .primaryRed).opacity(1))
+        .background(Color(color_primary_red).opacity(1))
         .background(Color.white)
         .cornerRadius(8)
     }
@@ -140,17 +140,17 @@ struct CartView: View {
         TextField("Add instructions", text: $instructionTxt)
             .disableAutocorrection(true)
             .keyboardType(.namePhonePad)
-            .foregroundStyle(Color.getColor(color: .dark48))
+            .foregroundStyle(Color(color_dark48))
             .padding(10)
             .padding(.vertical, 10)
-            .background(Color.getColor(color: .dark241))
+            .background(Color(color_dark241))
             .clipShape(RoundedRectangle(cornerRadius: 4))
     }
     
     private var additionalItems: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Complete your meal with: ")
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
                 .padding(.vertical, 12)
             
@@ -160,7 +160,7 @@ struct CartView: View {
                         VStack(alignment: .leading, spacing: 0) {
                             Text("sonal")
                                 .lineLimit(2)
-                                .foregroundStyle(Color.getColor(color: .dark96))
+                                .foregroundStyle(Color(color_dark96))
                                 .frame(maxWidth: .infinity, alignment: .leading)
                                 .padding(8)
                             
@@ -168,19 +168,19 @@ struct CartView: View {
                             
                             HStack(alignment: .center, spacing: 12) {
                                 Text("$20.00")
-                                    .foregroundStyle(Color.getColor(color: .dark48))
+                                    .foregroundStyle(Color(color_dark48))
                                     .frame(maxWidth: .infinity, alignment: .leading)
                                     
                                 Image(systemName: "plus.square.fill")
-                                    .foregroundStyle(Color.getColor(color: .mbGreenSelectedBorder))
+                                    .foregroundStyle(Color(color_mb_green_selected_border))
                             }
                             .padding(8)
                         }
-                        .background(Color.getColor(color: .mbGreenSelectedBackGround))
+                        .background(Color(color_mb_green_selected_backGround))
                         .clipShape(RoundedRectangle(cornerRadius: 8))
                         .overlay(
                             RoundedRectangle(cornerRadius: 8)
-                                .stroke(Color.getColor(color: .mbGreenSelectedBorder), lineWidth: 0.5)
+                                .stroke(Color(color_mb_green_selected_border), lineWidth: 0.5)
                         )
                         
                         Image(systemName: "circle.square.fill")
@@ -200,16 +200,16 @@ struct CartView: View {
     func itemView() -> some View {
         HStack(spacing: 6) {
             Image(systemName: "circle.square.fill")
-                .foregroundStyle(Color.getColor(color: .primaryRed))
+                .foregroundStyle(Color(color_primary_red))
             
             Text("Water ")
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
             
             Spacer()
             
             Text("$20.00")
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
             
             addBtn

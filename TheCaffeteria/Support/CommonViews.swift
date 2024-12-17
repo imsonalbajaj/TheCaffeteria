@@ -10,10 +10,10 @@ import SwiftUI
 struct TopSafeSection: View {
     var body: some View {
         VStack(spacing: 0) {
-            Color.getColor(color: .primaryRed)
+            Color(color_primary_red)
                 .frame(height: TOP_INSET-1)
             
-            Color.getColor(color: .primaryRed)
+            Color(color_primary_red)
                 .frame(height: 1)
         }
     }
@@ -22,10 +22,10 @@ struct TopSafeSection: View {
 struct BottomSafeSection: View {
     var body: some View {
         VStack(spacing: 0) {
-            Color.getColor(color: .primaryRed)
+            Color(color_primary_red)
                 .frame(height: 1)
             
-            Color.getColor(color: .primaryRed)
+            Color(color_primary_red)
                 .frame(height: BOTTOM_INSET-1)
         }
     }
@@ -53,7 +53,7 @@ struct NetworkImageView: View {
                     Image(systemName: "camera.metering.unknown")
                         .resizable()
                         .scaledToFill()
-                        .foregroundStyle(Color.getColor(color: .dark216))
+                        .foregroundStyle(Color(color_dark216))
                 @unknown default:
                     EmptyView()
                 }
@@ -62,7 +62,7 @@ struct NetworkImageView: View {
             Image(systemName: "camera.metering.unknown")
                 .resizable()
                 .scaledToFill()
-                .foregroundStyle(Color.getColor(color: .dark216))
+                .foregroundStyle(Color(color_dark216))
         }
         
     }
@@ -76,7 +76,7 @@ struct CustomLoaderView: View {
             ForEach(0..<3) { index in
                 Circle()
                     .frame(width: 20, height: 20)
-                    .foregroundStyle(Color.getColor(color: .primaryRed).opacity(0.7))
+                    .foregroundStyle(Color(color_primary_red).opacity(0.7))
                     .scaleEffect(isAnimating ? 0.5 : 1.0)
                     .animation(
                         Animation.easeInOut(duration: 0.3)

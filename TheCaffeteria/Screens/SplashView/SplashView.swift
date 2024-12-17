@@ -19,12 +19,12 @@ struct SplashView: View {
         case .failure(_):
 //            
             ZStack {
-                Color.getColor(color: .dark216)
+                Color(color_dark216)
                     .frame(maxWidth: .infinity, maxHeight: .infinity)
                 
                 VStack {
                     Text("Unexpected error encountered \nplease try after some time")
-                        .foregroundStyle(Color.getColor(color: .dark151))
+                        .foregroundStyle(Color(color_dark151))
                         .multilineTextAlignment(.center)
                         
 

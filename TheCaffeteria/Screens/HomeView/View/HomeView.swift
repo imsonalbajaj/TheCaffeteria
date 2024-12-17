@@ -60,7 +60,7 @@ struct HomeView: View {
         .padding(.horizontal, 16)
 //        .padding(.vertical, 8)
         .frame(height: 40)
-        .background(Color.getColor(color: .primaryRed))
+        .background(Color(color_primary_red))
     }
     
     var todaysOfferView: some View {
@@ -135,16 +135,16 @@ struct FoodCounterSection: View {
                 
                 HStack(spacing: 2){
                     Image(systemName: "star.fill")
-                        .foregroundStyle(Color.getColor(color: .primaryRed))
+                        .foregroundStyle(Color(color_primary_red))
                     Text("4.5")
-                        .foregroundStyle(Color.getColor(color: .primaryRed))
+                        .foregroundStyle(Color(color_primary_red))
                     
                     Circle()
-                        .fill(Color.getColor(color: .dark144))
+                        .fill(Color(color_dark144))
                         .frame(height: 5)
                     
                     Text("pickup")
-                        .foregroundStyle(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color(color_dark144))
                 }
                 
                 Text("no pending orders")

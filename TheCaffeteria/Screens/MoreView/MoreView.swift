@@ -17,14 +17,14 @@ struct MoreView: View {
             TopSafeSection()
             topView
             
-            Color.getColor(color: .primaryRed).opacity(0.5)
+            Color(color_primary_red).opacity(0.5)
                 .frame(height: 0.3)
 
             userIcon()
             toolsMenu
             Spacer()
         }
-        .background(Color.getColor(color: .dark241))
+        .background(Color(color_dark241))
         .navigationBarHidden(true)
         .ignoresSafeArea(.all)
 //        .ignoresSafeArea(edges: .all)
@@ -49,7 +49,7 @@ struct MoreView: View {
                 }
         }
         .frame(height: 40)
-        .background(Color.getColor(color: .primaryRed))
+        .background(Color(color_primary_red))
     }
     
     @ViewBuilder
@@ -92,7 +92,7 @@ struct MoreView: View {
         }
         .padding(.horizontal, 32)
         .padding(.bottom, 32)
-        .background(Color.getColor(color: .primaryRed))
+        .background(Color(color_primary_red))
     }
     
     @ViewBuilder
@@ -112,7 +112,7 @@ struct MoreView: View {
                     .foregroundStyle(Color.red)
 
                 Text("Favourite")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
 
                 Spacer()
             }
@@ -123,7 +123,7 @@ struct MoreView: View {
                 Image(systemName: "questionmark.circle")
                     .foregroundStyle(Color.black)
                 Text("Favourite")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                 Spacer()
             }
             .padding(.horizontal, 32)
@@ -134,7 +134,7 @@ struct MoreView: View {
                     .foregroundStyle(Color.blue)
                 
                 Text("Log out")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                 Spacer()
             }
             .padding(.horizontal, 32)

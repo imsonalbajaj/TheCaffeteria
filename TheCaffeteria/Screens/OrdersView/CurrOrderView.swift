@@ -29,7 +29,7 @@ struct CurrOrderView: View {
                     
                     Spacer()
                 }
-                .background(Color.getColor(color: .dark241))
+                .background(Color(color_dark241))
                 
             }
             
@@ -69,7 +69,7 @@ struct CurrOrderView: View {
         }
         .padding(.horizontal, 16)
         .frame(height: 40)
-        .background(Color.getColor(color: .primaryRed))
+        .background(Color(color_primary_red))
     }
     
     var orderStatusView: some View {
@@ -80,7 +80,7 @@ struct CurrOrderView: View {
                     .frame(width: 60, height: 60)
                     .clipShape(Circle())
                     .overlay(
-                        Circle().stroke(Color.getColor(color: .dark216))
+                        Circle().stroke(Color(color_dark216))
                     )
                 
                 Image(systemName: "checkmark.circle.fill")
@@ -94,9 +94,9 @@ struct CurrOrderView: View {
             
             VStack(alignment: .leading, spacing: 0){
                 Text("Delivered")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                 Text("Your order has been collected")
-                    .foregroundStyle(Color.getColor(color: .dark96))
+                    .foregroundStyle(Color(color_dark96))
                     .lineLimit(1)
             }
             
@@ -108,7 +108,7 @@ struct CurrOrderView: View {
         .clipShape(RoundedRectangle(cornerRadius: 8))
         .overlay(
             RoundedRectangle(cornerRadius: 8)
-                .stroke(Color.getColor(color: .dark216), lineWidth: 1)
+                .stroke(Color(color_dark216), lineWidth: 1)
         )
         .padding(6)
     }
@@ -118,48 +118,48 @@ struct CurrOrderView: View {
         VStack(alignment: .leading, spacing: 0) {
             HStack(spacing: 0) {
                 Text("Detailed Bill")
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                     .lineLimit(1)
                 
                 Spacer()
                 
                 Text("1 dec'24, 08:46")
-                    .foregroundStyle(Color.getColor(color: .dark144))
+                    .foregroundStyle(Color(color_dark144))
             }
             .padding(8)
             
             
             VStack(alignment: .leading, spacing: 10){
                 HStack(spacing: 10) {
-                    Color.getColor(color: .primaryRed)
+                    Color(color_primary_red)
                         .frame(width: 2)
                         .padding(.trailing, 10)
                     
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text("Order ID")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                         Text("Order Type")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text(":")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                         Text(":")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                     }
                     
                     VStack(alignment: .leading, spacing: 4) {
                         Text("VADVVAVKAN76")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                         Text("Dine in")
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                     }
                     Spacer()
@@ -168,10 +168,10 @@ struct CurrOrderView: View {
                 
                 HStack(spacing: 10) {
                     Image(systemName: "house.fill")
-                        .foregroundStyle(Color.getColor(color: .primaryRed))
+                        .foregroundStyle(Color(color_primary_red))
                     
                     Text("The Samosa's")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                 }
                 .padding(.vertical, 12)
@@ -179,27 +179,27 @@ struct CurrOrderView: View {
                 VStack(alignment: .leading, spacing: 0) {
                     HStack(alignment: .top, spacing: 0) {
                         Text("Item".getTruncateStr(with: 15))
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                         
                         Spacer()
                         
                         Text("Qty.".getTruncateStr(with: 15))
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                             .padding(.horizontal, 10)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .frame(width: qtyFrameWidth)
                         
                         Text("Price.".getTruncateStr(with: 15))
-                            .foregroundStyle(Color.getColor(color: .dark48))
+                            .foregroundStyle(Color(color_dark48))
                             .lineLimit(1)
                             .frame(maxWidth: .infinity, alignment: .trailing)
                             .frame(width: priceFrameWidth)
                     }
                     
                     HLine().stroke(style: StrokeStyle(lineWidth: 1, dash: [5]))
-                        .foregroundStyle(Color.getColor(color: .dark216))
+                        .foregroundStyle(Color(color_dark216))
                     
                     getItemOrdered()
                         .padding(.vertical, 4)
@@ -217,7 +217,7 @@ struct CurrOrderView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.getColor(color: .dark216), lineWidth: 1)
+                    .stroke(Color(color_dark216), lineWidth: 1)
             )
             .padding(6)
         }
@@ -226,31 +226,31 @@ struct CurrOrderView: View {
     var paymentInfoView: some View {
         VStack(alignment: .leading, spacing: 0) {
             Text("Paid Via")
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
                 .padding(8)
             
             
             HStack(spacing: 0) {
-                Color.getColor(color: .primaryRed)
+                Color(color_primary_red)
                     .frame(width: 2)
                     .padding(.trailing, 10)
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Paid Via")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                     Text("Amount")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                     Text("Trans ID")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                     Text("Status")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                     Text("Transaction Type")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                 }
                 .padding(.trailing, 10)
@@ -258,19 +258,19 @@ struct CurrOrderView: View {
                 
                 VStack(alignment: .leading, spacing: 4) {
                     Text("Sodexo")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                     Text("$20.0")
-                        .foregroundStyle(Color.getColor(color: .dark48))
+                        .foregroundStyle(Color(color_dark48))
                         .lineLimit(1)
                     Text("INOCINW8098IO")
-                        .foregroundStyle(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color(color_dark144))
                         .lineLimit(1)
                     Text("Success")
                         .foregroundStyle(Color.getColor(color: .foodPrimaryGreen))
                         .lineLimit(1)
                     Text("Order")
-                        .foregroundStyle(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color(color_dark144))
                         .lineLimit(1)
                 }
                 
@@ -282,7 +282,7 @@ struct CurrOrderView: View {
             .clipShape(RoundedRectangle(cornerRadius: 8))
             .overlay(
                 RoundedRectangle(cornerRadius: 8)
-                    .stroke(Color.getColor(color: .dark216), lineWidth: 1)
+                    .stroke(Color(color_dark216), lineWidth: 1)
             )
             .padding(6)
         }
@@ -293,15 +293,15 @@ struct CurrOrderView: View {
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .leading, spacing: 0){
                 Text("tea x 1".getTruncateStr(with: 15))
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                     .lineLimit(1)
                 
                 Text("Delievered")
-                    .foregroundStyle(Color.getColor(color: .mbGreenSelectedBorder))
+                    .foregroundStyle(Color(color_mb_green_selected_border))
                     .lineLimit(1)
                     .padding(.vertical, 2)
                     .padding(.horizontal, 8)
-                    .background(Color.getColor(color: .mbGreenSelectedBackGround))
+                    .background(Color(color_mb_green_selected_backGround))
                     .clipShape(RoundedRectangle(cornerRadius: 4))
                     .padding(.vertical, 3)
             }
@@ -310,14 +310,14 @@ struct CurrOrderView: View {
             Spacer()
             
             Text("x 1".getTruncateStr(with: 15))
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
                 .padding(.horizontal, 10)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .frame(width: qtyFrameWidth)
             
             Text("$10.00".getTruncateStr(with: 15))
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .frame(width: priceFrameWidth)
@@ -330,18 +330,18 @@ struct CurrOrderView: View {
         HStack(alignment: .top, spacing: 0) {
             VStack(alignment: .leading, spacing: 0){
                 Text("Total Bill".getTruncateStr(with: 15))
-                    .foregroundStyle(Color.getColor(color: .primaryRed))
+                    .foregroundStyle(Color(color_primary_red))
                     .lineLimit(1)
                 
                 Text("inclusive of all taxes & charges")
-                    .foregroundStyle(Color.getColor(color: .dark144))
+                    .foregroundStyle(Color(color_dark144))
                     .lineLimit(1)
             }
             
             Spacer()
                         
             Text("$30.00".getTruncateStr(with: 15))
-                .foregroundStyle(Color.getColor(color: .dark48))
+                .foregroundStyle(Color(color_dark48))
                 .lineLimit(1)
                 .frame(maxWidth: .infinity, alignment: .trailing)
                 .frame(width: priceFrameWidth * 2)

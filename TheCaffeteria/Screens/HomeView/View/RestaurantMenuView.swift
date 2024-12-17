@@ -19,7 +19,7 @@ struct RestaurantMenuView: View {
             if let menuData = viewModel.menuData {
                 headerView
                     .frame(height: 40)
-                    .background(Color.getColor(color: .primaryRed))
+                    .background(Color(color_primary_red))
                 
                 if let sectionArr = menuData.section, sectionArr.count > 0 {
                     ZStack(alignment: .top) {
@@ -135,16 +135,16 @@ struct RestaurantMenuView: View {
     private var cafeteriaInfo: some View {
         HStack(spacing: 2) {
             Text("Rated")
-                .foregroundStyle(Color.getColor(color: .dark96))
+                .foregroundStyle(Color(color_dark96))
             
             Text("4.5")
-                .foregroundStyle(Color.getColor(color: .dark96))
+                .foregroundStyle(Color(color_dark96))
             
             Image(systemName: "star.fill")
                 .foregroundStyle(Color.getColor(color: .ratingYellow))
             
             Text("by verified user's")
-                .foregroundStyle(Color.getColor(color: .dark96))
+                .foregroundStyle(Color(color_dark96))
         }
         .padding(.horizontal, 16)
         .padding(.vertical, 8)
@@ -154,7 +154,7 @@ struct RestaurantMenuView: View {
     private var searchBar: some View {
         HStack {
             Image(systemName: "magnifyingglass")
-                .foregroundStyle(Color.getColor(color: .primaryRed))
+                .foregroundStyle(Color(color_primary_red))
             ZStack {
                 TextField("", text: $viewModel.searchText)
                     .foregroundStyle(Color(color_dark48))
@@ -163,7 +163,7 @@ struct RestaurantMenuView: View {
                 
                 if viewModel.searchText.count < 1 {
                     Text("Find items, food categories...")
-                        .foregroundStyle(Color.getColor(color: .dark96))
+                        .foregroundStyle(Color(color_dark96))
                         .frame(maxWidth: .infinity, alignment: .leading)
                 }
 
@@ -171,7 +171,7 @@ struct RestaurantMenuView: View {
             Spacer()
         }
         .padding(16)
-        .background(Color.getColor(color: .dark241))
+        .background(Color(color_dark241))
         .cornerRadius(10)
         .padding(.horizontal, 16)
         .padding(.vertical, 8)

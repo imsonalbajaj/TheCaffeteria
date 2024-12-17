@@ -43,15 +43,6 @@ let CUSTOM_NAV_HEI = 40.0
 // MARK: enum's
 
 enum CustomColor {
-    case dark48
-    case dark96
-    case dark144
-    case dark151
-    case dark216
-    case dark241
-    case mbGreenSelectedBorder
-    case mbGreenSelectedBackGround
-    case primaryRed
     case foodPrimaryGreen
     case ratingYellow
 }

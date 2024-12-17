@@ -24,20 +24,20 @@ struct MenuItemRow: View {
                 Text(item.itemName ?? "")
                     .font(.system(size: 16, weight: .medium))
                     .fontWeight(.medium)
-                    .foregroundStyle(Color.getColor(color: .dark48))
+                    .foregroundStyle(Color(color_dark48))
                 
                 HStack(spacing: 2){
                     Image(systemName: "star.fill")
                         .foregroundStyle(Color.getColor(color: .ratingYellow))
                     Text(item.itemRating ?? "")
-                        .foregroundStyle(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color(color_dark144))
                     Text("(\(item.itemReviewsCount ?? ""))")
-                        .foregroundStyle(Color.getColor(color: .dark144))
+                        .foregroundStyle(Color(color_dark144))
                 }
                 
                 Text(item.itemPrice ?? "")
                     .font(.system(size: 16, weight: .medium))
-                    .foregroundStyle(Color.getColor(color: .primaryRed))
+                    .foregroundStyle(Color(color_primary_red))
             }
             
             Spacer()
@@ -49,7 +49,7 @@ struct MenuItemRow: View {
                     .clipShape(RoundedRectangle(cornerRadius: 8))
                     .overlay(
                         RoundedRectangle(cornerRadius: 8)
-                            .stroke(Color.getColor(color: .dark216), lineWidth: 0.1)
+                            .stroke(Color(color_dark216), lineWidth: 0.1)
                     )
                 
                 addBtn
@@ -103,7 +103,7 @@ struct MenuItemRow: View {
             }
         }
         .frame(width: 100,height: 40)
-        .background(Color.getColor(color: .primaryRed).opacity(1))
+        .background(Color(color_primary_red).opacity(1))
         .background(Color.white)
         .cornerRadius(8)
     }
