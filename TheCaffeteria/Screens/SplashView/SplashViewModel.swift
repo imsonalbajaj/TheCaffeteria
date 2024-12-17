@@ -9,7 +9,8 @@ import SwiftUI
 
 class SplashViewModel: ObservableObject {
     @Published var state: ApiRespState = .loading
-
+    static var temp = 0
+    
     init() {
         self.hitSplashApi()
     }
@@ -18,8 +19,12 @@ class SplashViewModel: ObservableObject {
         self.state = .loading
         
         DispatchQueue.main.asyncAfter(deadline: .now() + 2.0) {
-//            self.state = .success(SplashModel())
-            self.state = .failure(.custom(error: ""))
+            if SplashViewModel.temp > 0 {
+                self.state = .success(SplashModel())
+            } else {
+                self.state = .failure(.custom(error: ""))
+            }
+            SplashViewModel.temp += 1
         }
     }
 }

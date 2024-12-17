@@ -8,15 +8,15 @@
 import SwiftUI
 
 struct SplashView: View {
-//    @StateObject private var viewModel = SplashViewModel()
+    @StateObject private var viewModel = SplashViewModel()
     
     var body: some View {
-//        switch viewModel.state {
-//        case .loading:
-//            CustomLoaderView()
-//        case .success(_):
-//            MainTabView()
-//        case .failure(_):
+        switch viewModel.state {
+        case .loading:
+            CustomLoaderView()
+        case .success(_):
+            MainTabView()
+        case .failure(_):
 //            
             ZStack {
                 Color.getColor(color: .dark216)
@@ -29,7 +29,7 @@ struct SplashView: View {
                         
 
                     Button {
-//                        viewModel.hitSplashApi()
+                        viewModel.hitSplashApi()
                     } label: {
                         Text("refresh")
                             .padding(.horizontal, 12)
@@ -41,7 +41,7 @@ struct SplashView: View {
                 }
             }
             .ignoresSafeArea(.all)
-//        }
+        }
     }
 }
 

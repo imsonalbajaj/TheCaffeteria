@@ -69,8 +69,3 @@ struct MainTabView: View {
         }
     }
 }
-
-#Preview {
-    MainTabView()
-//        .modelContainer(for: Item.self, inMemory: true)
-}
