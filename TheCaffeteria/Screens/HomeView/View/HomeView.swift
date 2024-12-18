@@ -33,7 +33,7 @@ struct HomeView: View {
                 
                 Spacer()
                 
-                homeBottomSection
+                homeBottomTreySection
                 BottomSafeSection()
             }
             .overlay {
@@ -114,7 +114,7 @@ struct HomeView: View {
             }.padding(12)
         }
     }
-    var homeBottomSection: some View {
+    var homeBottomTreySection: some View {
         HStack(alignment: .center, spacing: 0){
             Spacer()
                 .frame(width: 16)
@@ -134,7 +134,7 @@ struct HomeView: View {
             Spacer()
                 .frame(width: 16)
         }
-        .padding(.top, 8)
+        .padding(.top, 12)
         .background(Color(color_primary_red))
     }
     

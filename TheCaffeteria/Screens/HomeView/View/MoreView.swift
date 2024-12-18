@@ -31,7 +31,7 @@ struct MoreView: View {
                     }
                 )
             
-            HLine()
+            Color.white
                 .frame(height: 0.25)
             
             toolsMenu
