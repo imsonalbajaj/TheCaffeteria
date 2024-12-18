@@ -39,8 +39,10 @@ struct HomeView: View {
             .overlay {
                 if moreTapped {
                     MoreView(moreTapped: $moreTapped)
+                        .transition(.move(edge: .bottom).combined(with: .opacity))
                 }
             }
+            .animation(.easeInOut, value: moreTapped)
             .ignoresSafeArea(.all)
             .navigationDestination(for: String.self) { destination in
                 if destination == "CurrOrderView" {
@@ -74,10 +76,9 @@ struct HomeView: View {
             
             Image(systemName: "magnifyingglass")
                 .foregroundStyle(Color.white)
-
+            
         }
         .padding(.horizontal, 16)
-//        .padding(.vertical, 8)
         .frame(height: 40)
         .background(Color(color_primary_red))
     }
@@ -87,7 +88,7 @@ struct HomeView: View {
             TabView() {
                 NetworkImageView(imageUrl: "https://www.foodiesfeed.com/wp-content/uploads/2023/06/burger-with-melted-cheese.jpg", placeHolderImg: "")
                     .scaledToFit()
-
+                
                 NetworkImageView(imageUrl: "https://www.foodiesfeed.com/wp-content/uploads/2023/08/tartelettes-top-view.jpg", placeHolderImg: "")
                     .scaledToFit()
                 
@@ -98,7 +99,7 @@ struct HomeView: View {
             .background(Color.black)
             .clipShape(RoundedRectangle(cornerRadius: 16))
             .shadow(color: Color(color_dark48), radius: 10)
-
+            
             
             
             HStack(spacing: 0) {
@@ -182,7 +183,7 @@ struct FoodCounterSection: View {
                 .frame(width: 100, height: 100)
                 .clipShape(RoundedRectangle(cornerRadius: 8))
                 .scaledToFit()
-
+            
             
             VStack(alignment: .leading,spacing: 4) {
                 Text("Explore food counters")
@@ -204,7 +205,6 @@ struct FoodCounterSection: View {
                 
                 Text("no pending orders")
                     .foregroundStyle(Color(color_dark48))
-
                 
                 Spacer()
             }

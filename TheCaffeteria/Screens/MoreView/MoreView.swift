@@ -41,30 +41,40 @@ struct MoreView: View {
         .background(Color.clear)
         .navigationBarHidden(true)
         .ignoresSafeArea(.all)
+        .gesture(
+            DragGesture()
+                .onEnded { value in
+                    if value.translation.height > 80 {
+                        withAnimation {
+                            moreTapped = false
+                        }
+                    }
+                }
+        )
     }
     
     /*
-    var topView : some View {
-        ZStack(alignment: .leadingFirstTextBaseline){
-            HStack(spacing: 0) {
-                Spacer()
-                
-                Text("Your Profile Section")
-                    .foregroundStyle(Color.white)
-                
-                Spacer()
-                
-            }
-            
-            Image(systemName: "arrow.backward").padding(.leading, 16)
-                .foregroundStyle(Color.white)
-                .onTapGesture {
-                    dismiss()
-                }
-        }
-        .frame(height: 40)
-        .background(Color(color_primary_red))
-    }
+     var topView : some View {
+     ZStack(alignment: .leadingFirstTextBaseline){
+     HStack(spacing: 0) {
+     Spacer()
+     
+     Text("Your Profile Section")
+     .foregroundStyle(Color.white)
+     
+     Spacer()
+     
+     }
+     
+     Image(systemName: "arrow.backward").padding(.leading, 16)
+     .foregroundStyle(Color.white)
+     .onTapGesture {
+     dismiss()
+     }
+     }
+     .frame(height: 40)
+     .background(Color(color_primary_red))
+     }
      */
     
     @ViewBuilder
@@ -76,13 +86,24 @@ struct MoreView: View {
                 .background(Color.black)
                 .foregroundStyle(Color.white)
                 .clipShape(Circle())
+                .padding(1)
+                .background(Color.white)
+                .clipShape(Circle())
                 .padding(.top, 16)
             
             VStack(alignment: .leading, spacing: 4) {
-                Text("Sonal")
-                    .font(.title3)
-                    .fontWeight(.semibold)
-                    .foregroundStyle(Color.white)
+                HStack(alignment: .lastTextBaseline,spacing: 6){
+                    Text("Hey,")
+                        .font(.title3)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color.white)
+                    
+                    Text("Sonal")
+                        .font(.title)
+                        .fontWeight(.semibold)
+                        .foregroundStyle(Color.white)
+                    
+                }
                 
                 Button {
                     dropdownTapped.toggle()
@@ -91,7 +112,7 @@ struct MoreView: View {
                         Image(systemName: dropdownTapped ? "arrow.up" : "arrow.down")
                             .foregroundStyle(Color.white)
                         
-                        Text( dropdownTapped ? "account details" : "view account details")
+                        Text( dropdownTapped ? "    " : "view your account details")
                             .foregroundStyle(Color.white)
                     }
                 }
