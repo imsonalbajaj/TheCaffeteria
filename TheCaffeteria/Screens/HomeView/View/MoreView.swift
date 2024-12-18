@@ -53,30 +53,6 @@ struct MoreView: View {
         )
     }
     
-    /*
-     var topView : some View {
-     ZStack(alignment: .leadingFirstTextBaseline){
-     HStack(spacing: 0) {
-     Spacer()
-     
-     Text("Your Profile Section")
-     .foregroundStyle(Color.white)
-     
-     Spacer()
-     
-     }
-     
-     Image(systemName: "arrow.backward").padding(.leading, 16)
-     .foregroundStyle(Color.white)
-     .onTapGesture {
-     dismiss()
-     }
-     }
-     .frame(height: 40)
-     .background(Color(color_primary_red))
-     }
-     */
-    
     @ViewBuilder
     func userIcon() -> some View {
         HStack(alignment: .top, spacing: 0) {

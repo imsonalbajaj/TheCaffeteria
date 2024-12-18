@@ -23,7 +23,7 @@ struct HomeView: View {
                         todaysOfferView
                             .padding(16)
                         
-                        FoodCounterSection(path: $path)
+                        foodCounterSection()
                     }
                 }
                 
@@ -150,33 +150,8 @@ struct HomeView: View {
         }
         .foregroundStyle(Color.white)
     }
-}
-
-struct FoodCounterSection: View {
-    @Binding var path: [String]
     
-    var body: some View {
-        VStack(spacing: 0) {
-            HStack(spacing: 0) {
-                Image(systemName: "fork.knife.circle.fill")
-                    .foregroundStyle(Color.gray)
-                
-                Text("Explore food counters")
-                    .foregroundStyle(Color.gray)
-                
-                Spacer()
-            }
-            .padding(.vertical, 8)
-            
-            foodCounterRow
-                .padding(.vertical, 6)
-            
-            foodCounterRow
-                .padding(.vertical, 6)
-        }
-        .padding(.horizontal, 8)
-    }
-    
+    /* food counter section view's */
     var foodCounterRow: some View {
         HStack(spacing: 8) {
             NetworkImageView(imageUrl: "https://www.foodiesfeed.com/wp-content/uploads/2023/08/tartelettes-top-view.jpg", placeHolderImg: "")
@@ -218,4 +193,28 @@ struct FoodCounterSection: View {
             path.append("RestaurantMenu") // Trigger navigation
         }
     }
+    
+    @ViewBuilder
+    func foodCounterSection() -> some View {
+        VStack(spacing: 0) {
+            HStack(spacing: 0) {
+                Image(systemName: "fork.knife.circle.fill")
+                    .foregroundStyle(Color.gray)
+                
+                Text("Explore food counters")
+                    .foregroundStyle(Color.gray)
+                
+                Spacer()
+            }
+            .padding(.vertical, 8)
+            
+            foodCounterRow
+                .padding(.vertical, 6)
+            
+            foodCounterRow
+                .padding(.vertical, 6)
+        }
+        .padding(.horizontal, 8)
+    }
+    
 }

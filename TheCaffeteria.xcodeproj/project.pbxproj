@@ -144,7 +144,6 @@
 				57A9F1FC2CF790F3009C00E0 /* HomeView */,
 				57A9F1FF2CF79123009C00E0 /* OrdersView */,
 				57A9F2062CF84C27009C00E0 /* CartView */,
-				57A9F2032CF84AEA009C00E0 /* MoreView */,
 			);
 			path = Screens;
 			sourceTree = "<group>";
@@ -152,6 +151,7 @@
 		5734BEC22CECC398002A5D5B /* View */ = {
 			isa = PBXGroup;
 			children = (
+				57A9F2042CF84B11009C00E0 /* MoreView.swift */,
 				57A9F1FD2CF79113009C00E0 /* HomeView.swift */,
 				5734BECE2CECFA8F002A5D5B /* RestaurantMenuView.swift */,
 				579CD3C12CEE4BB300A10751 /* MenuSection.swift */,
@@ -290,14 +290,6 @@
 				5734BECC2CECFA61002A5D5B /* RestaurantMenuViewModel.swift */,
 			);
 			path = ViewModel;
-			sourceTree = "<group>";
-		};
-		57A9F2032CF84AEA009C00E0 /* MoreView */ = {
-			isa = PBXGroup;
-			children = (
-				57A9F2042CF84B11009C00E0 /* MoreView.swift */,
-			);
-			path = MoreView;
 			sourceTree = "<group>";
 		};
 		57A9F2062CF84C27009C00E0 /* CartView */ = {
