@@ -51,7 +51,7 @@ let homeViewIcons: [HomeViewIcon] = [
     HomeViewIcon(img: "house.fill", txt: "Home", destinationView: nil),
     HomeViewIcon(img: "pencil.and.list.clipboard.rtl", txt: "Orders", destinationView: "OrdersView"),
     HomeViewIcon(img: "cart", txt: "Cart", destinationView: "CartView"),
-    HomeViewIcon(img: "ellipsis", txt: "More", destinationView: "MoreView")
+    HomeViewIcon(img: "ellipsis", txt: "More", destinationView: nil)
 ]
 
 

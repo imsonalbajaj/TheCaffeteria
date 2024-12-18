@@ -64,7 +64,7 @@ struct MainTabView: View {
                 } else if destination == "CartView" {
                     CartView()
                 } else if destination == "MoreView" {
-                    MoreView()
+//                    MoreView()
                 }
             }
         }

@@ -10,24 +10,39 @@ import SwiftUI
 struct MoreView: View {
     @Environment(\.dismiss) private var dismiss
     @State var dropdownTapped: Bool = false
+    @Binding var moreTapped: Bool
     let widthForDetails: CGFloat = 70
-
+    
     var body: some View {
         VStack (alignment: .leading, spacing: 0) {
-            TopSafeSection()
-            topView
+            Color.black.opacity(0.3)
+                .onTapGesture {
+                    moreTapped = false
+                    print("you are on spacer")
+                }
             
-            Color(color_primary_red).opacity(0.5)
-                .frame(height: 0.3)
-
             userIcon()
+                .background(
+                    VStack{
+                        Color(color_primary_red)
+                            .frame(height: 52)
+                            .clipShape(RoundedCornerShape(corners: [.topLeft, .topRight], radius: 26))
+                            .offset(y: -26)
+                        
+                        Spacer()
+                    }
+                )
+            
+            HLine()
+                .frame(height: 0.25)
+            
             toolsMenu
-            Spacer()
+            
+            BottomSafeSection()
         }
-        .background(Color(color_dark241))
+        .background(Color.clear)
         .navigationBarHidden(true)
         .ignoresSafeArea(.all)
-//        .ignoresSafeArea(edges: .all)
     }
     
     var topView : some View {
@@ -75,7 +90,7 @@ struct MoreView: View {
                     HStack(spacing: 5) {
                         Image(systemName: dropdownTapped ? "arrow.up" : "arrow.down")
                             .foregroundStyle(Color.white)
-
+                        
                         Text( dropdownTapped ? "account details" : "view account details")
                             .foregroundStyle(Color.white)
                     }
@@ -109,11 +124,7 @@ struct MoreView: View {
         VStack {
             HStack(spacing: 16) {
                 Image(systemName: "heart.fill")
-                    .foregroundStyle(Color.red)
-
                 Text("Favourite")
-                    .foregroundStyle(Color(color_dark48))
-
                 Spacer()
             }
             .padding(.horizontal, 32)
@@ -121,9 +132,7 @@ struct MoreView: View {
             
             HStack(spacing: 16) {
                 Image(systemName: "questionmark.circle")
-                    .foregroundStyle(Color.black)
                 Text("Favourite")
-                    .foregroundStyle(Color(color_dark48))
                 Spacer()
             }
             .padding(.horizontal, 32)
@@ -131,15 +140,14 @@ struct MoreView: View {
             
             HStack(spacing: 16) {
                 Image(systemName: "arrow.uturn.backward.square")
-                    .foregroundStyle(Color.blue)
-                
                 Text("Log out")
-                    .foregroundStyle(Color(color_dark48))
                 Spacer()
             }
             .padding(.horizontal, 32)
             .padding(.top, 16)
         }
+        .foregroundStyle(Color.white)
+        .background(Color(color_primary_red))
     }
     
     @ViewBuilder
@@ -160,7 +168,7 @@ struct MoreView: View {
             Text(txt2.getTruncateStr(with: 15))
                 .foregroundStyle(Color.white)
                 .frame(maxWidth: .infinity, alignment: .leading)
-
+            
         }
     }
 }

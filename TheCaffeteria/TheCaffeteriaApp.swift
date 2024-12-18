@@ -25,7 +25,7 @@ struct TheCaffeteriaApp: App {
 
     var body: some Scene {
         WindowGroup {
-            SplashView()
+            HomeView()
         }
 //        .modelContainer(sharedModelContainer)
     }

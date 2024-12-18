@@ -9,6 +9,7 @@ import SwiftUI
 
 struct HomeView: View {
     @State private var path: [String] = []
+    @State private var moreTapped = false
     
     var body: some View {
         NavigationStack(path: $path) {
@@ -35,8 +36,11 @@ struct HomeView: View {
                 homeBottomSection
                 BottomSafeSection()
             }
-            //        .background(Color.gray.opacity(0.2))
-            //        .background(Color.black)
+            .overlay {
+                if moreTapped {
+                    MoreView(moreTapped: $moreTapped)
+                }
+            }
             .ignoresSafeArea(.all)
             .navigationDestination(for: String.self) { destination in
                 if destination == "CurrOrderView" {
@@ -47,8 +51,6 @@ struct HomeView: View {
                     OrdersView(path: $path)
                 } else if destination == "CartView" {
                     CartView()
-                } else if destination == "MoreView" {
-                    MoreView()
                 }
             }
         }
@@ -121,6 +123,10 @@ struct HomeView: View {
                     .onTapGesture {
                         if let destinationView = homeViewIcon.destinationView {
                             path.append(destinationView)
+                        } else {
+                            if homeViewIcon.txt == "More" {
+                                moreTapped.toggle()
+                            }
                         }
                     }
             }
@@ -212,9 +218,4 @@ struct FoodCounterSection: View {
             path.append("RestaurantMenu") // Trigger navigation
         }
     }
-}
-
-
-#Preview {
-    HomeView()
 }
