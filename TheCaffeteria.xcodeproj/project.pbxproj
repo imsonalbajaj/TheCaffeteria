@@ -8,6 +8,7 @@
 
 /* Begin PBXBuildFile section */
 		572914772D12FEFF0023FE22 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572914762D12FEFF0023FE22 /* LoginView.swift */; };
+		572914792D132F6B0023FE22 /* RegistrationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 572914782D132F6B0023FE22 /* RegistrationView.swift */; };
 		5734BEBE2CECBE24002A5D5B /* chaisutta.json in Resources */ = {isa = PBXBuildFile; fileRef = 5734BEBD2CECBE24002A5D5B /* chaisutta.json */; };
 		5734BEC62CECF161002A5D5B /* MenuData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BEC52CECF161002A5D5B /* MenuData.swift */; };
 		5734BEC92CECF840002A5D5B /* Utility.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5734BEC82CECF840002A5D5B /* Utility.swift */; };
@@ -60,6 +61,7 @@
 
 /* Begin PBXFileReference section */
 		572914762D12FEFF0023FE22 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		572914782D132F6B0023FE22 /* RegistrationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegistrationView.swift; sourceTree = "<group>"; };
 		5734BEBD2CECBE24002A5D5B /* chaisutta.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = chaisutta.json; sourceTree = "<group>"; };
 		5734BEC52CECF161002A5D5B /* MenuData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuData.swift; sourceTree = "<group>"; };
 		5734BEC82CECF840002A5D5B /* Utility.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Utility.swift; sourceTree = "<group>"; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				572914762D12FEFF0023FE22 /* LoginView.swift */,
+				572914782D132F6B0023FE22 /* RegistrationView.swift */,
 			);
 			path = LoginRegistrationView;
 			sourceTree = "<group>";
@@ -465,6 +468,7 @@
 				57EDD7482CFEED59004CBD9A /* OrdersTabView.swift in Sources */,
 				572914772D12FEFF0023FE22 /* LoginView.swift in Sources */,
 				5734BED52CEDC2B7002A5D5B /* ConstanstAndEnums.swift in Sources */,
+				572914792D132F6B0023FE22 /* RegistrationView.swift in Sources */,
 				5781EC412CFCE3CA00130470 /* CurrOrderView.swift in Sources */,
 				573EDE372C64C27900CBCB9F /* TheCaffeteriaApp.swift in Sources */,
 				5734BED12CECFD13002A5D5B /* String.swift in Sources */,
