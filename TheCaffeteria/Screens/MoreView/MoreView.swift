@@ -8,7 +8,6 @@
 import SwiftUI
 
 struct MoreView: View {
-    @Environment(\.dismiss) private var dismiss
     @State var dropdownTapped: Bool = false
     @Binding var moreTapped: Bool
     let widthForDetails: CGFloat = 70
@@ -18,7 +17,6 @@ struct MoreView: View {
             Color.black.opacity(0.3)
                 .onTapGesture {
                     moreTapped = false
-                    print("you are on spacer")
                 }
             
             userIcon()
@@ -45,6 +43,7 @@ struct MoreView: View {
         .ignoresSafeArea(.all)
     }
     
+    /*
     var topView : some View {
         ZStack(alignment: .leadingFirstTextBaseline){
             HStack(spacing: 0) {
@@ -66,6 +65,7 @@ struct MoreView: View {
         .frame(height: 40)
         .background(Color(color_primary_red))
     }
+     */
     
     @ViewBuilder
     func userIcon() -> some View {
