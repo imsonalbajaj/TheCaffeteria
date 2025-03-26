@@ -1,5 +1,10 @@
 # TheCaffeteria
 
+<div align="center">
+  <img src="https://github.com/imsonalbajaj/TheCaffeteria/blob/main/TheCaffeteria/Resources/Simulator%20Screenshot%20-%20iPhone%2015%20-%202025-03-26%20at%2009.13.16.png" alt="Image 1" width="300" style="margin: 10px"/>
+  <img src="https://github.com/imsonalbajaj/TheCaffeteria/blob/main/TheCaffeteria/Resources/Simulator%20Screenshot%20-%20iPhone%2015%20-%202025-03-26%20at%2009.13.24.png" alt="Image 2" width="300" style="margin: 10px"/>
+  <img src="https://github.com/imsonalbajaj/TheCaffeteria/blob/main/TheCaffeteria/Resources/Simulator%20Screenshot%20-%20iPhone%2015%20-%202025-03-26%20at%2009.14.24.png" alt="Image 3" width="300" style="margin: 10px"/>
+</div>
 ![\Screenshot](https://raw.githubusercontent.com/imsonalbajaj/TheCaffeteria/main/TheCaffeteria/Resources/Simulator%20Screenshot%20-%20iPhone%2015%20-%202025-03-26%20at%2009.13.24.png)
 
 ## 📌 Overview
