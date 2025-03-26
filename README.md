@@ -1,5 +1,7 @@
 # TheCaffeteria
 
+![\Screenshot](https://raw.githubusercontent.com/imsonalbajaj/TheCaffeteria/main/TheCaffeteria/Resources/Simulator%20Screenshot%20-%20iPhone%2015%20-%202025-03-26%20at%2009.13.24.png)
+
 ## 📌 Overview
 TheCaffeteria is a SwiftUI-based iOS application that displays a dynamic menu interface with seamless navigation. It features API integration, state management, and performance optimizations to enhance user experience.
 
